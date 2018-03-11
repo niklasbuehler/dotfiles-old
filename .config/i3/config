@@ -1,0 +1,169 @@
+# mod
+set $mod Mod4
+
+# font
+font pango: System San Francisco Display 10
+
+# thin borders
+hide_edge_borders both
+
+# change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# lock
+bindsym $mod+Shift+l exec ~/.blurlock/blurlock
+
+# move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+set $workspace1 "1 "
+set $workspace2 "2 "
+set $workspace3 "3 "
+set $workspace4 "4 "
+set $workspace5 "5 "
+set $workspace6 "6 "
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace10 "10"
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace
+bindsym $mod+Shift+r restart
+
+# exit i3
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec /home/niklas/.i3/scripts/exit_menu
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Up resize grow height 10 px or 10 ppt
+    bindsym Down resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# resize mode
+bindsym $mod+r mode "resize"
+
+# colors
+set $bg-color            #000000
+set $inactive-bg-color   #000000
+set $text-color          #E9ECE8
+set $inactive-text-color #666666
+set $urgent-bg-color     #E56F38
+set $urgent-text-color   #7B311E
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          #00ff00
+client.unfocused        $iancative-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $iancative-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.urgent           $urgent-bg-color    $urgent-bg-color   $urgent-text-color   #00ff00
+
+bar {
+	status_command i3blocks -c ~/.i3/i3blocks.conf
+	position top
+	colors {
+		background $inactive-bg-color
+		separator $inactive-text-color
+		#                  border             background         text
+		focused_workspace  $bg-color          $bg-color          $text-color
+		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $urgent-text-color
+	}
+}
+
+
+# sticky window
+bindsym $mod+Shift+s sticky toggle
+
+# assign workspaces
+assign [class="XTerm"] $workspace1
+assign [class="Firefox"] $workspace2
+assign [class="Eclipse"] $workspace3
+assign [class="IntelliJ"] $workspace3
+assign [class="Zathura"] $workspace4
+assign [class="Nautilus"] $workspace5
+assign [class="Spotify"] $workspace6
+
+# jump to created windows and focus
+focus_on_window_activation focus
+
+# key-bindings
+bindsym $mod+Shift+f exec nautilus
+bindsym $mod+Shift+i exec firefox
+bindsym $mod+Return exec xterm
+bindsym $mod+Shift+q kill
+# run normal launcher
+bindsym $mod+space exec rofi -show run
+# run desktop launcher (for IntelliJ and such)
+bindsym $mod+d exec rofi -show drun
+# volume control
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 10%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 10%- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+# startup
+exec_always --no-startup-id feh --bg-scale /home/niklas/Pictures/wallpaper.jpg
+# disables laptop screen
+exec_always --no-startup-id xrandr --output eDP-1 --off
+# compton for fading
+exec_always --no-startup-id compton -f
+# load XTerm theme
+exec_always xrdb -merge ~/.Xresources

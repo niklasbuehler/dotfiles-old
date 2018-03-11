@@ -1,0 +1,31 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!! .Xresources !!!!!!!!!!!!!!!!!!!!!!!!!!
+! do not forget to run xrdb -merge ~/.Xresources after updating !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Rofi !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+rofi.modi: run,drun
+rofi.fullscreen: true
+rofi.padding: 400
+rofi.eh: 2
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!! XTerm !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+xterm*faceName:		System San Francisco Display
+xterm*faceSize:		10
+xterm*foreground:	#E9ECE8
+xterm*background:	#302E2F
+xterm*cursorColor:	#000000
+xterm*scrollTtyOutput:	true
+! yellow
+xterm*color3:		#FFEB3B
+! cyan
+xterm*color6:		#00BCD4
+! blue
+xterm*color4:		#3F51B5
+! blue 2
+xterm*color12:		#2196F3
+! purple
+xterm*color13:		#9C27B0
+! red
+xterm*color9:		#F44336
+! white
+xterm*color7:		#E9ECE8
