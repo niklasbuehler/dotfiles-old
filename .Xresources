@@ -12,7 +12,7 @@ rofi.eh: 2
 xterm*faceName:		System San Francisco Display
 xterm*faceSize:		10
 xterm*foreground:	#E9ECE8
-xterm*background:	#302E2F
+xterm*background:	#000000
 xterm*cursorColor:	#000000
 xterm*scrollTtyOutput:	true
 ! yellow
