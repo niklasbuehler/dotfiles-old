@@ -2,7 +2,7 @@
 
 INTERNAL_OUTPUT="eDP-1"
 EXTERNAL_OUTPUT1="DP-2"
-EXTERNAL_OUTPUT2="HDMI-1"
+EXTERNAL_OUTPUT2="DP-1"
 
 xrandr | grep $EXTERNAL_OUTPUT1 | grep " connected "
 if [ $? -eq 0 ]; then

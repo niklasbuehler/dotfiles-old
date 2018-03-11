@@ -13,14 +13,15 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# lock
-bindsym $mod+Shift+l exec ~/.i3lock/blurlock
-
 # move focused window
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+
+# move current workspace to prev/next monitor
+bindsym $mod+Shift+Prior move workspace to output left
+bindsym $mod+Shift+Next move workspace to output right
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -84,8 +85,13 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Shift+e exec /home/niklas/.i3/scripts/exit_menu
+bindsym $mod+Shift+e exec ~/bin/exit_menu
+
+# lock the screen
+bindsym $mod+Shift+l exec ~/bin/blurlock
+
+# enter resize mode
+bindsym $mod+r mode "resize"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -97,9 +103,6 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-
-# resize mode
-bindsym $mod+r mode "resize"
 
 # colors
 set $bg-color            #000000
@@ -117,8 +120,8 @@ client.focused_inactive $iancative-bg-color $inactive-bg-color $inactive-text-co
 client.urgent           $urgent-bg-color    $urgent-bg-color   $urgent-text-color   #00ff00
 
 bar {
-	status_command i3blocks -c ~/.i3/i3blocks.conf
-	position top
+	status_command i3blocks -c ~/.config/i3/i3blocks.conf
+	position bottom
 	colors {
 		background $inactive-bg-color
 		separator $inactive-text-color
@@ -129,7 +132,7 @@ bar {
 	}
 }
 
-# assign workspaces (assign by titles first, as class binds stronger and first occurance counts)
+# assign workspaces
 assign [title="ranger"] $workspace5
 assign [class="XTerm"] $workspace1
 assign [class="Firefox"] $workspace2
@@ -143,12 +146,9 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+f exec xterm -e ranger
 bindsym $mod+Shift+i exec firefox
 bindsym $mod+Shift+t exec xterm -e top
-bindsym $mod+Shift+Prior move workspace to output left
-bindsym $mod+Shift+Next move workspace to output right
 
 # run normal launcher
 bindsym $mod+space exec rofi -show run
-
 # run desktop launcher (for IntelliJ and such)
 bindsym $mod+d exec rofi -show drun
 
