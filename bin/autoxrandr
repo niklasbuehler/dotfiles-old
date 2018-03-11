@@ -1,0 +1,16 @@
+#!/bin/bash
+
+INTERNAL_OUTPUT="eDP-1"
+EXTERNAL_OUTPUT1="DP-2"
+EXTERNAL_OUTPUT2="HDMI-1"
+
+xrandr | grep $EXTERNAL_OUTPUT1 | grep " connected "
+if [ $? -eq 0 ]; then
+    xrandr --output $INTERNAL_OUTPUT --off
+    xrandr --output $EXTERNAL_OUTPUT1 --auto --primary
+    xrandr --output $EXTERNAL_OUTPUT2 --auto --right-of $EXTERNAL_OUTPUT1
+else
+    xrandr --output $INTERNAL_OUTPUT --auto
+    xrandr --output $EXTERNAL_OUTPUT1 --off
+    xrandr --output $EXTERNAL_OUTPUT2 --off
+fi

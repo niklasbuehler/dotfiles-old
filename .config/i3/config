@@ -143,6 +143,8 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+f exec xterm -e ranger
 bindsym $mod+Shift+i exec firefox
 bindsym $mod+Shift+t exec xterm -e top
+bindsym $mod+Shift+Prior move workspace to output left
+bindsym $mod+Shift+Next move workspace to output right
 
 # run normal launcher
 bindsym $mod+space exec rofi -show run
@@ -156,10 +158,11 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 10%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # on startup
+# set background
 exec_always --no-startup-id feh --bg-scale /home/niklas/Pictures/wallpaper.jpg
-# disable laptop screen
-exec_always --no-startup-id xrandr --output eDP-1 --off
+# automatically switch on/off monitors and place them
+exec_always --no-startup-id ~/bin/autoxrandr
 # compton for fading
 exec_always --no-startup-id compton -f
-# load XTerm theme
-exec_always xrdb -merge ~/.Xresources
+# reload Xresources
+exec_always --no-startup-id xrdb -merge ~/.Xresources
