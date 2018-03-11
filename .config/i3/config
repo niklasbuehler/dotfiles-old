@@ -47,7 +47,7 @@ set $workspace2 "2 "
 set $workspace3 "3 "
 set $workspace4 "4 "
 set $workspace5 "5 "
-set $workspace6 "6 "
+set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"
@@ -129,39 +129,35 @@ bar {
 	}
 }
 
-
-# sticky window
-bindsym $mod+Shift+s sticky toggle
-
-# assign workspaces
+# assign workspaces (assign by titles first, as class binds stronger and first occurance counts)
+assign [title="ranger"] $workspace5
 assign [class="XTerm"] $workspace1
 assign [class="Firefox"] $workspace2
 assign [class="Eclipse"] $workspace3
 assign [class="IntelliJ"] $workspace3
 assign [class="Zathura"] $workspace4
-assign [class="Nautilus"] $workspace5
-assign [class="Spotify"] $workspace6
 
-# jump to created windows and focus
-focus_on_window_activation focus
-
-# key-bindings
-bindsym $mod+Shift+f exec nautilus
-bindsym $mod+Shift+i exec firefox
+# key-bindings for programs
 bindsym $mod+Return exec xterm
 bindsym $mod+Shift+q kill
+bindsym $mod+Shift+f exec xterm -e ranger
+bindsym $mod+Shift+i exec firefox
+bindsym $mod+Shift+t exec xterm -e top
+
 # run normal launcher
 bindsym $mod+space exec rofi -show run
+
 # run desktop launcher (for IntelliJ and such)
 bindsym $mod+d exec rofi -show drun
+
 # volume control
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 10%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 10%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
-# startup
+# on startup
 exec_always --no-startup-id feh --bg-scale /home/niklas/Pictures/wallpaper.jpg
-# disables laptop screen
+# disable laptop screen
 exec_always --no-startup-id xrandr --output eDP-1 --off
 # compton for fading
 exec_always --no-startup-id compton -f
