@@ -14,7 +14,7 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # lock
-bindsym $mod+Shift+l exec ~/.blurlock/blurlock
+bindsym $mod+Shift+l exec ~/.i3lock/blurlock
 
 # move focused window
 bindsym $mod+Shift+Left move left
