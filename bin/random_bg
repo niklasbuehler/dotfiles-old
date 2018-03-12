@@ -1,4 +1,4 @@
 #!/bin/bash
 DIR="/home/niklas/Pictures/Wallpapers/"
 PATH=$(find $DIR -iname "*.jpg" -print | shuf | head -1)
-/usr/bin/feh --bg-fill $PATH
+/usr/bin/feh --bg-scale $PATH
