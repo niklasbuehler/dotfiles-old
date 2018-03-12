@@ -123,7 +123,7 @@ bar {
 	status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	position bottom
 	colors {
-		background $inactive-bg-color
+		background $bg-color
 		separator $inactive-text-color
 		#                  border             background         text
 		focused_workspace  $bg-color          $bg-color          $text-color
@@ -159,10 +159,10 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # on startup
 # set background
-exec_always --no-startup-id feh --bg-scale /home/niklas/Pictures/wallpaper.jpg
+exec_always --no-startup-id ~/bin/random_bg
 # automatically switch on/off monitors and place them
 exec_always --no-startup-id ~/bin/autoxrandr
 # compton for fading
-exec_always --no-startup-id compton -f
+exec_always --no-startup-id exec compton -f
 # reload Xresources
-exec_always --no-startup-id xrdb -merge ~/.Xresources
+exec_always --no-startup-id exec xrdb -merge ~/.Xresources
