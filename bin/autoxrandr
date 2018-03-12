@@ -4,13 +4,36 @@ INTERNAL_OUTPUT="eDP-1"
 EXTERNAL_OUTPUT1="DP-2"
 EXTERNAL_OUTPUT2="DP-1"
 
+WS1="1 "
+WS2="2 "
+WS3="3 "
+WS4="4 "
+WS5="5 "
+
 xrandr | grep $EXTERNAL_OUTPUT1 | grep " connected "
 if [ $? -eq 0 ]; then
+    # External displays connected
     xrandr --output $INTERNAL_OUTPUT --off
     xrandr --output $EXTERNAL_OUTPUT1 --auto --primary
     xrandr --output $EXTERNAL_OUTPUT2 --auto --right-of $EXTERNAL_OUTPUT1
+
+   i3-msg "workspace $WS1; move workspace to output $EXTERNAL_OUTPUT1"
+   i3-msg "workspace $WS2; move workspace to output $EXTERNAL_OUTPUT1"
+   i3-msg "workspace $WS3; move workspace to output $EXTERNAL_OUTPUT1"
+   i3-msg "workspace $WS4; move workspace to output $EXTERNAL_OUTPUT2"
+   i3-msg "workspace $WS5; move workspace to output $EXTERNAL_OUTPUT2"
 else
+    # No external displays connected
     xrandr --output $INTERNAL_OUTPUT --auto
     xrandr --output $EXTERNAL_OUTPUT1 --off
     xrandr --output $EXTERNAL_OUTPUT2 --off
+
+   i3-msg "workspace $WS1; move workspace to output $INTERNAL_OUTPUT"
+   i3-msg "workspace $WS2; move workspace to output $INTERNAL_OUTPUT"
+   i3-msg "workspace $WS3; move workspace to output $INTERNAL_OUTPUT"
+   i3-msg "workspace $WS4; move workspace to output $INTERNAL_OUTPUT"
+   i3-msg "workspace $WS5; move workspace to output $INTERNAL_OUTPUT"
 fi
+
+# finally change back from workspace 5 to workspace 1
+i3-msg "workspace $WS1"
