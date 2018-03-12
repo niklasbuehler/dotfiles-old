@@ -40,8 +40,8 @@ bindsym $mod+e layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
+# switch focus between tiled and floating windows
+bindsym $mod+t focus mode_toggle
 
 set $workspace1 "1 "
 set $workspace2 "2 "
@@ -108,7 +108,7 @@ mode "resize" {
 set $bg-color            #000000
 set $inactive-bg-color   #000000
 set $text-color          #E9ECE8
-set $inactive-text-color #666666
+set $inactive-text-color #444444
 set $urgent-bg-color     #E56F38
 set $urgent-text-color   #7B311E
 
@@ -157,12 +157,16 @@ bindsym XF86AudioRaiseVolume exec amixer -q set Master 10%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 10%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
-# on startup
+# on restart
 # set background
 exec_always --no-startup-id ~/bin/random_bg
 # automatically switch on/off monitors and place them
 exec_always --no-startup-id ~/bin/autoxrandr
 # compton for fading
-exec_always --no-startup-id exec compton -f
+exec_always --no-startup-id compton -f
 # reload Xresources
-exec_always --no-startup-id exec xrdb -merge ~/.Xresources
+exec_always --no-startup-id xrdb -merge ~/.Xresources
+
+# on startup
+# automatically lock after 5 minutes
+exec_always xautolock -time 5 -locker ~/bin/blurlock
