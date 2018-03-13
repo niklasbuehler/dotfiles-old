@@ -2,12 +2,6 @@
 ! do not forget to run xrdb -merge ~/.Xresources after updating !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Rofi !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-rofi.modi: run,drun
-rofi.fullscreen: true
-rofi.padding: 400
-rofi.eh: 2
-
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!! XTerm !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 xterm*faceName:		Inconsolata
 xterm*faceSize:		10

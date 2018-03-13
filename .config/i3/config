@@ -147,10 +147,10 @@ bindsym $mod+Shift+f exec --no-startup-id xterm -e ranger
 bindsym $mod+Shift+i exec --no-startup-id firefox
 bindsym $mod+Shift+t exec --no-startup-id xterm -e top
 
-# run normal launcher
-bindsym $mod+space exec --no-startup-id rofi -show run
-# run desktop launcher (for IntelliJ and such)
-bindsym $mod+d exec --no-startup-id rofi -show drun
+# run programs and scripts
+bindsym $mod+space exec --no-startup-id dmenu_run -b -p run
+# run desktop launchers (for IntelliJ and such)
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -b -p launch"
 
 # volume control
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 10%+ unmute
