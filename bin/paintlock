@@ -1,0 +1,8 @@
+#!/bin/bash
+# pretty much not useable to lock the screen as it takes a few seconds to process the image... beautiful though
+scrot /tmp/screenshot.png
+#convert /tmp/screenshot.png -paint 1 -paint 3 -paint 5 -paint 10 -blur 0x3 /tmp/lockscreenbg.png
+# faster:
+convert /tmp/screenshot.png -statistic Mode 10 /tmp/lockscreenbg.png
+rm /tmp/screenshot.png
+i3lock -i /tmp/lockscreenbg.png -u

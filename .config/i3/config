@@ -158,10 +158,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 10%- unmu
 bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
 
 # on restart
-# set background
-exec_always --no-startup-id exec ~/bin/random_bg
 # automatically switch on/off monitors and place them
 exec_always --no-startup-id exec ~/bin/autoxrandr
+# set background
+exec_always --no-startup-id exec ~/bin/random_bg
 # compton for fading
 exec_always --no-startup-id exec compton -f
 # reload Xresources
