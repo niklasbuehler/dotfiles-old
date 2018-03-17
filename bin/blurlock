@@ -1,5 +1,2 @@
 #!/bin/bash
-scrot /tmp/screenshot.png
-convert /tmp/screenshot.png -blur 0x3 /tmp/lockscreenbg.png
-rm /tmp/screenshot.png
-i3lock -i /tmp/lockscreenbg.png -u
+convert -resize 5% -resize 2000% /tmp/lockscreenbg.png /tmp/lockscreenbg.png

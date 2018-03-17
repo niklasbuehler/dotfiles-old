@@ -1,5 +1,2 @@
 #!/bin/bash
-scrot /tmp/screenshot.png
-convert /tmp/screenshot.png -interpolate nearest -virtual-pixel mirror -spread 1 /tmp/lockscreenbg.png
-rm /tmp/screenshot.png
-i3lock -i /tmp/lockscreenbg.png -u
+convert /tmp/lockscreenbg.png -interpolate nearest -virtual-pixel mirror -spread 2 /tmp/lockscreenbg.png

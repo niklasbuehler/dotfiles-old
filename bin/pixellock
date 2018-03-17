@@ -1,5 +1,2 @@
 #!/bin/bash
-scrot /tmp/screenshot.png
-mogrify -scale 10% -scale 1000% /tmp/lockscreenbg.png
-rm /tmp/screenshot.png
-i3lock -i /tmp/lockscreenbg.png -u
+convert -scale 1% -scale 10150% /tmp/lockscreenbg.png /tmp/lockscreenbg.png

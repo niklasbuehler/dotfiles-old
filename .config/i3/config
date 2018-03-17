@@ -88,7 +88,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec --no-startup-id ~/bin/exit_menu
 
 # lock the screen
-bindsym $mod+Shift+l exec --no-startup-id ~/bin/blurlock
+bindsym $mod+Shift+l exec --no-startup-id ~/bin/lock
 
 # enter resize mode
 bindsym $mod+r mode "resize"
@@ -161,7 +161,7 @@ bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
 # automatically switch on/off monitors and place them
 exec_always --no-startup-id exec ~/bin/autoxrandr
 # set background
-exec_always --no-startup-id exec ~/bin/random_bg
+exec_always --no-startup-id exec ~/bin/set_theme
 # compton for fading
 exec_always --no-startup-id exec compton -f
 # reload Xresources
@@ -169,4 +169,4 @@ exec_always --no-startup-id exec xrdb -merge ~/.Xresources
 
 # on startup
 # automatically lock after 5 minutes
-exec_always --no-startup-id exec xautolock -time 5 -locker ~/bin/blurlock
+exec_always --no-startup-id exec xautolock -time 5 -locker ~/bin/lock
