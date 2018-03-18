@@ -105,26 +105,27 @@ mode "resize" {
 }
 
 # colors
-set $bg-color            #000000
-set $inactive-bg-color   #000000
-set $text-color          #E9ECE8
-set $inactive-text-color #444444
-set $urgent-bg-color     #E56F38
-set $urgent-text-color   #7B311E
+#                 variable                id   fallback
+set_from_resource $bg-color		color8 #000000
+set_from_resource $inactive-bg-color	color0 #000000
+set_from_resource $text-color		color7 #E9ECE8
+set_from_resource $inactive-text-color	color7 #444444
+set_from_resource $urgent-bg-color	color1 #E56F38
+set_from_resource $urgent-text-color	color7 #7B311E
 
 # window colors
 #                       border              background         text                 indicator
 client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $iancative-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $iancative-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
 client.urgent           $urgent-bg-color    $urgent-bg-color   $urgent-text-color   #00ff00
 
 bar {
 	status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	position bottom
 	colors {
-		background $bg-color
-		separator $inactive-text-color
+		background $inactive-bg-color
+		separator $text-color
 		#                  border             background         text
 		focused_workspace  $bg-color          $bg-color          $text-color
 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
@@ -160,12 +161,12 @@ bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
 # on restart
 # automatically switch on/off monitors and place them
 exec_always --no-startup-id exec ~/bin/autoxrandr
-# set background
-exec_always --no-startup-id exec ~/bin/set_theme
 # compton for fading
 exec_always --no-startup-id exec compton -f
 # reload Xresources
 exec_always --no-startup-id exec xrdb -merge ~/.Xresources
+# set theme
+exec_always --no-startup-id exec ~/bin/set_theme
 
 # on startup
 # automatically lock after 5 minutes

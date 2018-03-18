@@ -1,0 +1,4 @@
+#!/bin/bash
+scrot /tmp/lockscreenbg.png
+pixellock
+i3lock -i /tmp/lockscreenbg.png -u

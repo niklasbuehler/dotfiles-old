@@ -2,24 +2,59 @@
 ! do not forget to run xrdb -merge ~/.Xresources after updating !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Global !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Import the color file
+#include ".colors"
+! blk
+*color0:  blk
+! gry
+*color8:  gry
+! red
+*color1:  red
+*color5:  red
+*color9:  red
+*color13: red
+! grn
+*color2:  grn
+*color3:  grn
+*color10: grn
+*color11: grn
+! blu
+*color4:  blu
+*color6:  blu
+*color12: blu
+*color14: blu
+! wht
+*color7:  wht
+*color15: wht
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!! XTerm !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 xterm*faceName:		Inconsolata
 xterm*faceSize:		10
-xterm*foreground:	#E9ECE8
-xterm*background:	#000000
-xterm*cursorColor:	#000000
 xterm*scrollTtyOutput:	true
-! yellow
-xterm*color3:		#FFEB3B
-! cyan
-xterm*color6:		#00BCD4
-! blue
-xterm*color4:		#3F51B5
-! blue 2
-xterm*color12:		#2196F3
-! purple
-xterm*color13:		#9C27B0
+
+xterm*foreground:	wht
+xterm*background:	blk
+xterm*cursorColor:	wht
+! blk
+xterm*color0:  blk
+! gry
+xterm*color8:  gry
 ! red
-xterm*color9:		#F44336
-! white
-xterm*color7:		#E9ECE8
+xterm*color1:  red
+xterm*color5:  red
+xterm*color9:  red
+xterm*color13: red
+! grn
+xterm*color2:  grn
+xterm*color3:  grn
+xterm*color10: grn
+xterm*color11: grn
+! blu
+xterm*color4:  blu
+xterm*color6:  blu
+xterm*color12: blu
+xterm*color14: blu
+! wht
+xterm*color7:  wht
+xterm*color15: wht
