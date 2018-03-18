@@ -1,0 +1,4 @@
+#!/bin/bash
+# reload theme from art script
+art -r
+i3-msg reload
