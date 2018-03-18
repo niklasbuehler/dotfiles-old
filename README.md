@@ -4,7 +4,12 @@ Configuration files for my setup. <br />
 ## Machine, OS and window manager
 I'm currently running **Debian** with **i3wm** on a **ThinkPad L470**.
 
-## Most important Programs
+## Dependencies
+i3wm
+i3blocks
+art by @gawlk
+
+## Most used programs
 Terminal      : XTerm <br />
 Editor        : Nano <br />
 File Explorer : ranger <br />
