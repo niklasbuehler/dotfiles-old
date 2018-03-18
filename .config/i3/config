@@ -165,9 +165,9 @@ exec_always --no-startup-id exec ~/bin/autoxrandr
 exec_always --no-startup-id exec compton -f
 # reload Xresources
 exec_always --no-startup-id exec xrdb -merge ~/.Xresources
-# set theme
-exec_always --no-startup-id exec ~/bin/set_theme
 
 # on startup
+# set theme
+exec --no-startup-id exec ~/bin/set_theme
 # automatically lock after 5 minutes
-exec_always --no-startup-id exec xautolock -time 5 -locker ~/bin/lock
+exec --no-startup-id exec xautolock -time 5 -locker ~/bin/lock

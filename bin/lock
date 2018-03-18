@@ -1,4 +1,4 @@
 #!/bin/bash
 scrot /tmp/lockscreenbg.png
-pixellock
+powderlock
 i3lock -i /tmp/lockscreenbg.png -u

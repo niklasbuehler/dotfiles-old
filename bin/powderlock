@@ -1,2 +1,2 @@
 #!/bin/bash
-convert /tmp/lockscreenbg.png -interpolate nearest -virtual-pixel mirror -spread 2 /tmp/lockscreenbg.png
+convert /tmp/lockscreenbg.png -interpolate nearest -virtual-pixel mirror -spread 1 /tmp/lockscreenbg.png
