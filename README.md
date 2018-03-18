@@ -5,9 +5,9 @@ Configuration files for my setup. <br />
 I'm currently running **Debian** with **i3wm** on a **ThinkPad L470**.
 
 ## Dependencies
-i3wm
-i3blocks
-art by @gawlk
+i3wm <br />
+i3blocks <br />
+art by @gawlk <br />
 
 ## Most used programs
 Terminal      : XTerm <br />
