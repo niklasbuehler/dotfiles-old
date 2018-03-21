@@ -17,3 +17,7 @@ Web Browser   : Firefox ESR <br />
 IDEs:         : Eclipse, IntelliJ (Android Studio) <br />
 PDF Viewer    : Zathura <br />
 Image-Viewer  : feh <br />
+
+## ToDo
+fix height of dmenu bar <br />
+update colors of exit menu to match theme

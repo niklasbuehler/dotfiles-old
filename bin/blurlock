@@ -1,2 +1,4 @@
 #!/bin/bash
-convert -resize 5% -resize 2000% /tmp/lockscreenbg.png /tmp/lockscreenbg.png
+#convert -resize 5% -resize 2000% /tmp/lockscreenbg.png /tmp/lockscreenbg.png
+# better effect:
+convert /tmp/lockscreenbg.png -blur 0x3 /tmp/lockscreenbg.png

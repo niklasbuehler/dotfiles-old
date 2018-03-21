@@ -1,2 +1,2 @@
 #!/bin/bash
-convert -scale 1% -scale 10000% /tmp/lockscreenbg.png /tmp/lockscreenbg.png
+convert -scale 5% -scale 2000% /tmp/lockscreenbg.png /tmp/lockscreenbg.png
