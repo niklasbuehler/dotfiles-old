@@ -1,0 +1,11 @@
+#!/bin/bash
+# script to be executed on i3wm startup
+
+# choose random theme
+art -r
+
+# load compton
+compton --config ${HOME}/.config/compton/compton.conf
+
+#start xautolock
+xautolock -time 5 -locker ${HOME}/bin/lock

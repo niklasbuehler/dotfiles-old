@@ -106,12 +106,12 @@ mode "resize" {
 
 # colors
 #                 variable                id   fallback
-set_from_resource $bg-color		color8 #000000
-set_from_resource $inactive-bg-color	color0 #000000
-set_from_resource $text-color		color7 #E9ECE8
-set_from_resource $inactive-text-color	color7 #444444
-set_from_resource $urgent-bg-color	color1 #E56F38
-set_from_resource $urgent-text-color	color7 #7B311E
+set_from_resource $bg-color								color8 #000000
+set_from_resource $inactive-bg-color			color0 #000000
+set_from_resource $text-color							color7 #E9ECE8
+set_from_resource $inactive-text-color		color7 #444444
+set_from_resource $urgent-bg-color				color1 #E56F38
+set_from_resource $urgent-text-color			color7 #7B311E
 
 # window colors
 #                       border              background         text                 indicator
@@ -148,25 +148,17 @@ bindsym $mod+Shift+i exec --no-startup-id firefox
 bindsym $mod+Shift+t exec --no-startup-id xterm -e top
 
 # run programs and scripts
-bindsym $mod+space exec --no-startup-id dmenu_run -b -p run -nb "$inactive-bg-color" -nf "$text-color" -sb "$urgent-bg-color" -sf "$urgent-text-color"
+bindsym $mod+space exec --no-startup-id dmenu_run -b -p run -nb "$inactive-bg-color" -nf "$text-color" -sb "$urgent-bg-color" -sf "$urgent-text-color" -fn 'Monaco-Linux:pixelsize=14'
 # run desktop launchers (for IntelliJ and such)
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -b -p launch -nb '$inactive-bg-color' -nf '$text-color' -sb '$urgent-bg-color' -sf '$urgent-text-color'"
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -b -p launch -nb '$inactive-bg-color' -nf '$text-color' -sb '$urgent-bg-color' -sf '$urgent-text-color' -fn 'Monaco-Linux:pixelsize=14'"
 
 # volume control
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 10%+ unmute
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 10%- unmute
 bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
 
-# on restart
-# automatically switch on/off monitors and place them
-exec_always --no-startup-id exec ~/bin/autoxrandr
-# compton for fading
-exec_always --no-startup-id exec compton -f
-# reload Xresources
-exec_always --no-startup-id exec xrdb -merge ~/.Xresources
-
 # on startup
-# set theme
-exec --no-startup-id exec ~/bin/set_theme
-# automatically lock after 5 minutes
-exec --no-startup-id exec xautolock -time 5 -locker ~/bin/lock
+exec --no-startup-id ~/bin/startup
+
+# on restart
+exec_always --no-startup-id ~/bin/reload
