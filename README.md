@@ -20,4 +20,5 @@ Image-Viewer  : feh <br />
 
 ## ToDo
 fix height of dmenu bar <br />
-update colors of exit menu to match theme
+update colors of exit menu to match theme <br />
+update font color for i3blocks
