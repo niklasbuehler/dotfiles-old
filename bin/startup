@@ -2,7 +2,9 @@
 # script to be executed on i3wm startup
 
 # choose random theme
-# art -r
+art -r
+# refresh colors
+i3-msg reload
 
 # load compton
 compton --config ${HOME}/.config/compton/compton.conf

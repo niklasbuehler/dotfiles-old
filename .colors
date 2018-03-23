@@ -1,8 +1,8 @@
-! Highway
+! Road
 ! dark
-#define blk #282833
-#define gry #6b6b8e
-#define red #c1935b
-#define grn #308596
-#define blu #3f659c
-#define wht #c4baa3
+#define blk #26262b
+#define gry #757584
+#define red #cc727c
+#define grn #aa91aa
+#define blu #ccadcc
+#define wht #e8d6e5
