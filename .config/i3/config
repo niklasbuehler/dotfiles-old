@@ -4,6 +4,9 @@ set $mod Mod4
 # font
 font pango: Monaco-Linux 10
 
+# no title bar
+new_window 1pixel
+
 # thin borders
 hide_edge_borders both
 
@@ -142,6 +145,7 @@ assign [class="Zathura"] $workspace4
 
 # key-bindings for programs
 bindsym $mod+Return exec --no-startup-id xterm
+bindsym $mod+Shift+Return exec --no-startup-id xterm; exec "bash -c 'sleep 0.1s;i3-msg floating enable;'
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+f exec --no-startup-id xterm -e ranger
 bindsym $mod+Shift+i exec --no-startup-id firefox

@@ -3,9 +3,6 @@
 # automatically detect monitors
 ${HOME}/bin/autoxrandr
 
-# reload theme from art script
-art
-
 # reload x resources
 xrdb -merge ${HOME}/.Xresources
 

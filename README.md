@@ -24,4 +24,3 @@ Image-Viewer  : feh <br />
 ## ToDo
 update colors of exit menu to match theme <br />
 update font color for i3blocks and colors of scripts to match theme <br />
-fix colors of titlebars after restarting and changing themes<br />

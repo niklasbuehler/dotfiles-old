@@ -1,4 +1,5 @@
 #!/bin/bash
-scrot /tmp/lockscreenbg.png
-pixellock
-i3lock -i /tmp/lockscreenbg.png -u
+#scrot /tmp/lockscreenbg.png
+#blurlock
+#i3lock -i /tmp/lockscreenbg.png -u
+${HOME}/bin/fancylock --no-text --blur=0x3
