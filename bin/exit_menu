@@ -1,6 +1,20 @@
 #!/bin/bash
+
+# get colors from color file
+REGEX="/^(#[a-f0-9]{6})"
+FILE=${HOME}"/.colors"
+# use first color as background color
+BG_COL=$(grep -m1 -o "\(#[a-f0-9]\{6\}\)$" $FILE | tail -1)
+# use fifth color as main text color
+TXT_COL=$(grep -m5 -o "\(#[a-f0-9]\{6\}\)$" $FILE | tail -1)
+# use second color as selected background color
+BG_SEL_COL=$(grep -m2 -o "\(#[a-f0-9]\{6\}\)$" $FILE | tail -1)
+# use sixth color as selected font color
+TXT_SEL_COL=$(grep -m6 -o "\(#[a-f0-9]\{6\}\)$" $FILE | tail -1)
+
+
 while [ "$select" != "NO" -a "$select" != "YES" ]; do
-    select=$(echo -e 'NO\nYES' | dmenu -nb '#000000' -nf '#E9ECE8' -sb '#3D4450' -sf '#E9ECE8' -fn '-*-*-medium-r-normal-*-*-*-*-*-*-100-*-*' -i -p "Are you sure you want to logout?")
+    select=$(echo -e 'NO\nYES' | dmenu -nb "$BG_COL" -nf "$TXT_COL" -sb "$BG_SEL_COL" -sf "$TXT_SEL_COL" -fn '-*-*-medium-r-normal-*-*-*-*-*-*-100-*-*' -i -p "Are you sure you want to logout?")
     [ -z "$select" ] && exit 0
 done
 [ "$select" = "NO" ] && exit 0

@@ -125,7 +125,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $urgent-text-colo
 
 bar {
 	status_command i3blocks -c ~/.config/i3/i3blocks.conf
-	position bottom
+	position top
 	colors {
 		background $inactive-bg-color
 		separator $text-color
