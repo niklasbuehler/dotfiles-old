@@ -1,6 +1,12 @@
 # mod
 set $mod Mod4
 
+# navigation keys
+set $left j
+set $down k
+set $up l
+set $right odiaeresis
+
 # font
 font pango: Monaco-Linux 10
 
@@ -11,26 +17,26 @@ new_window 1pixel
 hide_edge_borders both
 
 # change focus
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 
 # move focused window
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
 # move current workspace to prev/next monitor
 bindsym $mod+Shift+Prior move workspace to output left
 bindsym $mod+Shift+Next move workspace to output right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+# bindsym $mod+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+# bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
@@ -81,6 +87,10 @@ bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace10
 
+# switch to previous/next workspace
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
@@ -91,30 +101,30 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec --no-startup-id ~/bin/exit_menu
 
 # lock the screen
-bindsym $mod+Shift+l exec --no-startup-id ~/bin/lock
+bindsym $mod+Ctrl+l exec --no-startup-id ~/bin/lock
 
 # enter resize mode
 bindsym $mod+r mode "resize"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Up resize grow height 10 px or 10 ppt
-    bindsym Down resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
+    bindsym $left resize shrink width 10 px or 10 ppt
+    bindsym $up resize grow height 10 px or 10 ppt
+    bindsym $down resize shrink height 10 px or 10 ppt
+    bindsym $right resize grow width 10 px or 10 ppt
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 
 # colors
-#                 variable                id   fallback
-set_from_resource $bg-color								color8 #000000
-set_from_resource $inactive-bg-color			color0 #000000
-set_from_resource $text-color							color7 #E9ECE8
-set_from_resource $inactive-text-color		color7 #444444
-set_from_resource $urgent-bg-color				color1 #E56F38
-set_from_resource $urgent-text-color			color7 #7B311E
+#                 variable              id   fallback
+set_from_resource $bg-color		color8 #000000
+set_from_resource $inactive-bg-color	color0 #000000
+set_from_resource $text-color		color7 #E9ECE8
+set_from_resource $inactive-text-color	color8 #444444
+set_from_resource $urgent-bg-color	color1 #E56F38
+set_from_resource $urgent-text-color	color7 #7B311E
 
 # window colors
 #                       border              background         text                 indicator
@@ -128,7 +138,8 @@ bar {
 	position top
 	colors {
 		background $inactive-bg-color
-		separator $text-color
+		separator $inactive-text-color
+		statusline $text-color
 		#                  border             background         text
 		focused_workspace  $bg-color          $bg-color          $text-color
 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
@@ -137,7 +148,6 @@ bar {
 }
 
 # assign workspaces
-assign [title="ranger"] $workspace5
 assign [class="Firefox"] $workspace2
 assign [class="Eclipse"] $workspace3
 assign [class="IntelliJ"] $workspace3
@@ -145,11 +155,11 @@ assign [class="Zathura"] $workspace4
 
 # key-bindings for programs
 bindsym $mod+Return exec --no-startup-id xterm
+bindsym $mod+v exec --no-startup-id xterm -e vim
 bindsym $mod+Shift+Return exec --no-startup-id xterm; exec "bash -c 'sleep 0.1s;i3-msg floating enable;'
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+f exec --no-startup-id xterm -e ranger
 bindsym $mod+Shift+i exec --no-startup-id firefox
-bindsym $mod+Shift+t exec --no-startup-id xterm -e top
 
 # run programs and scripts
 bindsym $mod+space exec --no-startup-id dmenu_run -b -p run -nb "$inactive-bg-color" -nf "$text-color" -sb "$urgent-bg-color" -sf "$urgent-text-color" -fn 'Monaco-Linux:pixelsize=14'
@@ -166,3 +176,6 @@ exec --no-startup-id ~/bin/startup
 
 # on restart
 exec_always --no-startup-id ~/bin/reload
+
+# change theme and reload
+bindsym $mod+Shift+t exec --no-startup-id ~/bin/change_theme

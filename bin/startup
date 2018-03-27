@@ -3,6 +3,8 @@
 
 # choose random theme
 art -r
+# reload xresources
+xrdb -merge ${HOME}/.Xresources
 # refresh colors
 i3-msg reload
 

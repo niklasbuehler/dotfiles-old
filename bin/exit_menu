@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # get colors from color file
-REGEX="/^(#[a-f0-9]{6})"
 FILE=${HOME}"/.colors"
 # use first color as background color
 BG_COL=$(grep -m1 -o "\(#[a-f0-9]\{6\}\)$" $FILE | tail -1)
