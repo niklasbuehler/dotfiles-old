@@ -1,181 +1,181 @@
-# mod
-set $mod Mod4
+###################################################
+#################### i3 config ####################
+###################################################
+# This configuration is set up to work with "j",  #
+# "k", "l" and ";" as navigation keys. It's also  # 
+# probably worth mentioning that I've remapped my #
+# capslock key to work as win key (Mod4).         #
+###################################################
+###################################################
 
-# navigation keys
-set $left j
-set $down k
-set $up l
-set $right odiaeresis
+###################################################
+#################### Behaviour ####################
+###################################################
 
-# font
-font pango: Monaco-Linux 10
+### Most important keys ###
+set	$mod	Mod4
+set	$left	j
+set	$down	k
+set	$up	l
+set	$right	semicolon
 
-# no title bar
-new_window 1pixel
+### Controlling windows ###
+# changing focus
+bindsym	$mod+$left		focus left
+bindsym	$mod+$down		focus down
+bindsym	$mod+$up		focus up
+bindsym	$mod+$right		focus right
+# moving focused windows (floating)
+bindsym	$mod+Shift+$left	move left
+bindsym	$mod+Shift+$down	move down
+bindsym	$mod+Shift+$up		move up
+bindsym	$mod+Shift+$right	move right
+# moving current workspace
+bindsym	$mod+Shift+Prior	move workspace to output left
+bindsym	$mod+Shift+Next		move workspace to output right
 
-# thin borders
-hide_edge_borders both
-
-# change focus
-bindsym $mod+$left focus left
-bindsym $mod+$down focus down
-bindsym $mod+$up focus up
-bindsym $mod+$right focus right
-
-# move focused window
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$up move up
-bindsym $mod+Shift+$right move right
-
-# move current workspace to prev/next monitor
-bindsym $mod+Shift+Prior move workspace to output left
-bindsym $mod+Shift+Next move workspace to output right
-
-# split in horizontal orientation
-# bindsym $mod+h split h
-
-# split in vertical orientation
-# bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen
-
+### Window containers ###
 # change container layout
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
+bindsym	$mod+t			layout tabbed
+bindsym	$mod+s			layout toggle split
+# split in horizontal orientation
+bindsym	$mod+Shift+h		split h
+# split in vertical orientation
+bindsym	$mod+Shift+v		split v
+# enter fullscreen mode for the focused container
+bindsym	F11			fullscreen
 # switch focus between tiled and floating windows
-bindsym $mod+t focus mode_toggle
-
-set $workspace1 "1 "
-set $workspace2 "2 "
-set $workspace3 "3 "
-set $workspace4 "4 "
-set $workspace5 "5 "
-set $workspace6 "6"
-set $workspace7 "7"
-set $workspace8 "8"
-set $workspace9 "9"
-set $workspace10 "10"
-
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $workspace1
-bindsym $mod+Shift+2 move container to workspace $workspace2
-bindsym $mod+Shift+3 move container to workspace $workspace3
-bindsym $mod+Shift+4 move container to workspace $workspace4
-bindsym $mod+Shift+5 move container to workspace $workspace5
-bindsym $mod+Shift+6 move container to workspace $workspace6
-bindsym $mod+Shift+7 move container to workspace $workspace7
-bindsym $mod+Shift+8 move container to workspace $workspace8
-bindsym $mod+Shift+9 move container to workspace $workspace9
-bindsym $mod+Shift+0 move container to workspace $workspace10
-
-# switch to workspace
-bindsym $mod+1 workspace $workspace1
-bindsym $mod+2 workspace $workspace2
-bindsym $mod+3 workspace $workspace3
-bindsym $mod+4 workspace $workspace4
-bindsym $mod+5 workspace $workspace5
-bindsym $mod+6 workspace $workspace6
-bindsym $mod+7 workspace $workspace7
-bindsym $mod+8 workspace $workspace8
-bindsym $mod+9 workspace $workspace9
-bindsym $mod+0 workspace $workspace10
-
-# switch to previous/next workspace
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
-
-# reload the configuration file
-bindsym $mod+Shift+c reload
-
-# restart i3 inplace
-bindsym $mod+Shift+r restart
-
-# exit i3
-bindsym $mod+Shift+e exec --no-startup-id ~/bin/exit_menu
-
-# lock the screen
-bindsym $mod+Ctrl+l exec --no-startup-id ~/bin/lock
-
+bindsym	$mod+f			focus mode_toggle
+# moving floating windows
+# toggle floating
+bindsym	$mod+Shift+f		floating toggle
+floating_modifier $mod+Shift
 # enter resize mode
-bindsym $mod+r mode "resize"
-
+bindsym	$mod+r			mode "resize"
 # resize window (you can also use the mouse for that)
 mode "resize" {
-    bindsym $left resize shrink width 10 px or 10 ppt
-    bindsym $up resize grow height 10 px or 10 ppt
-    bindsym $down resize shrink height 10 px or 10 ppt
-    bindsym $right resize grow width 10 px or 10 ppt
+    bindsym	$left	resize shrink width 10 px or 10 ppt
+    bindsym	$up	resize grow height 10 px or 10 ppt
+    bindsym	$down	resize shrink height 10 px or 10 ppt
+    bindsym	$right	resize grow width 10 px or 10 ppt
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+    bindsym	Return	mode "default"
+    bindsym	Escape	mode "default"
 }
 
-# colors
-#                 variable              id   fallback
-set_from_resource $bg-color		color8 #000000
-set_from_resource $inactive-bg-color	color0 #000000
-set_from_resource $text-color		color7 #E9ECE8
-set_from_resource $inactive-text-color	color8 #444444
-set_from_resource $urgent-bg-color	color1 #E56F38
-set_from_resource $urgent-text-color	color7 #7B311E
+### Workspaces ###
+set	$workspace1	"1  tty"
+set	$workspace2	"2  web"
+set	$workspace3	"3  dev"
+set	$workspace4	"4  doc"
+set	$workspace5	"5  file"
+set	$workspace6	"6"
+set	$workspace7	"7"
+set	$workspace8	"8"
+set	$workspace9	"9"
+set	$workspace10	"10"
+# switching to workspace
+bindsym	$mod+1		workspace $workspace1
+bindsym	$mod+2		workspace $workspace2
+bindsym	$mod+3		workspace $workspace3
+bindsym	$mod+4		workspace $workspace4
+bindsym	$mod+5		workspace $workspace5
+bindsym	$mod+6		workspace $workspace6
+bindsym	$mod+7		workspace $workspace7
+bindsym	$mod+8		workspace $workspace8
+bindsym	$mod+9		workspace $workspace9
+bindsym	$mod+0		workspace $workspace10
+# switching to previous/next workspace
+bindsym	$mod+Tab	workspace next
+bindsym	$mod+Shift+Tab	workspace prev
+# moving windows to workspaces
+bindsym	$mod+Shift+1	move container to workspace $workspace1
+bindsym	$mod+Shift+2	move container to workspace $workspace2
+bindsym	$mod+Shift+3	move container to workspace $workspace3
+bindsym	$mod+Shift+4	move container to workspace $workspace4
+bindsym	$mod+Shift+5	move container to workspace $workspace5
+bindsym	$mod+Shift+6	move container to workspace $workspace6
+bindsym	$mod+Shift+7	move container to workspace $workspace7
+bindsym	$mod+Shift+8	move container to workspace $workspace8
+bindsym	$mod+Shift+9	move container to workspace $workspace9
+bindsym	$mod+Shift+0	move container to workspace $workspace10
 
-# window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $urgent-text-color   #00ff00
+### i3 related actions ###
+# reload the configuration file
+bindsym	$mod+Shift+c		reload
+# restart i3
+bindsym	$mod+Shift+r		restart
+# lock screen
+bindsym	$mod+Escape		exec --no-startup-id ~/bin/lock
+# exit i3
+bindsym	$mod+Shift+e		exec --no-startup-id ~/bin/exit_menu
+# change theme and reload
+bindsym	$mod+Shift+t		exec --no-startup-id ~/bin/change_theme
+# quit focused program
+bindsym	$mod+Shift+q		kill
 
+### Scripts ###
+# on startup
+exec --no-startup-id		~/bin/startup
+# on restart
+exec_always --no-startup-id	~/bin/reload
+
+### Programs ###
+# launchers
+bindsym	$mod+space		exec --no-startup-id dmenu_run -p run -nb "$inactive-bg-color" -nf "$text-color" -sb "$urgent-bg-color" -sf "$urgent-text-color" -fn "Monaco-Linux:pixelsize=14"
+bindsym	$mod+d			exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -p launch -nb '$inactive-bg-color' -nf '$text-color' -sb '$urgent-bg-color' -sf '$urgent-text-color' -fn 'Monaco-Linux:pixelsize=14'"
+# quick start programs
+bindsym	$mod+Return		exec --no-startup-id xterm
+bindsym	$mod+v			exec --no-startup-id xterm -e vim
+bindsym	$mod+r			exec --no-startup-id xterm -e ranger
+bindsym	$mod+i			exec --no-startup-id firefox
+# default workspaces
+assign	[class="Firefox"]	$workspace2
+assign	[class="Eclipse"]	$workspace3
+assign	[class="IntelliJ"]	$workspace3
+assign	[class="Zathura"]	$workspace4
+# volume control
+bindsym	XF86AudioRaiseVolume	exec --no-startup-id amixer -q set Master 10%+ unmute
+bindsym	XF86AudioLowerVolume	exec --no-startup-id amixer -q set Master 10%- unmute
+bindsym	XF86AudioMute		exec --no-startup-id amixer -q set Master toggle
+
+###################################################
+################### Appearance ####################
+###################################################
+
+### General appearance ###
+# nice monospaced font
+font pango:		Monaco-Linux 10
+# no title bars or borders
+new_window		1pixel
+hide_edge_borders	both
+
+### Colors ###
+# load			variable		id		fallback
+set_from_resource	$bg-color		color8		#000000
+set_from_resource	$inactive-bg-color	color0 		#000000
+set_from_resource	$text-color		color7 		#E9ECE8
+set_from_resource	$inactive-text-color	color8 		#444444
+set_from_resource	$urgent-bg-color	color1 		#E56F38
+set_from_resource	$urgent-text-color	color7 		#7B311E
+# set
+#			border			background		text			indicator
+client.focused		$bg-color		$bg-color		$text-color		#00ff00
+client.unfocused	$inactive-bg-color	$inactive-bg-color	$inactive-text-color	#00ff00
+client.focused_inactive	$inactive-bg-color	$inactive-bg-color	$inactive-text-color	#00ff00
+client.urgent		$urgent-bg-color	$urgent-bg-color	$urgent-text-color	#00ff00
+
+### i3-bar ###
 bar {
-	status_command i3blocks -c ~/.config/i3/i3blocks.conf
-	position top
+	status_command	i3blocks -c ~/.config/i3/i3blocks.conf
+	position	top
 	colors {
-		background $inactive-bg-color
-		separator $inactive-text-color
-		statusline $text-color
-		#                  border             background         text
-		focused_workspace  $bg-color          $bg-color          $text-color
-		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $urgent-text-color
+		background	$inactive-bg-color
+		separator	$inactive-text-color
+		statusline	$text-color
+		# colors		border			background		text
+		focused_workspace	$bg-color		$bg-color		$text-color
+		inactive_workspace	$inactive-bg-color	$inactive-bg-color	$inactive-text-color
+		urgent_workspace	$urgent-bg-color	$urgent-bg-color	$urgent-text-color
 	}
 }
-
-# assign workspaces
-assign [class="Firefox"] $workspace2
-assign [class="Eclipse"] $workspace3
-assign [class="IntelliJ"] $workspace3
-assign [class="Zathura"] $workspace4
-
-# key-bindings for programs
-bindsym $mod+Return exec --no-startup-id xterm
-bindsym $mod+v exec --no-startup-id xterm -e vim
-bindsym $mod+Shift+Return exec --no-startup-id xterm; exec "bash -c 'sleep 0.1s;i3-msg floating enable;'
-bindsym $mod+Shift+q kill
-bindsym $mod+Shift+f exec --no-startup-id xterm -e ranger
-bindsym $mod+Shift+i exec --no-startup-id firefox
-
-# run programs and scripts
-bindsym $mod+space exec --no-startup-id dmenu_run -b -p run -nb "$inactive-bg-color" -nf "$text-color" -sb "$urgent-bg-color" -sf "$urgent-text-color" -fn 'Monaco-Linux:pixelsize=14'
-# run desktop launchers (for IntelliJ and such)
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -b -p launch -nb '$inactive-bg-color' -nf '$text-color' -sb '$urgent-bg-color' -sf '$urgent-text-color' -fn 'Monaco-Linux:pixelsize=14'"
-
-# volume control
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 10%+ unmute
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 10%- unmute
-bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
-
-# on startup
-exec --no-startup-id ~/bin/startup
-
-# on restart
-exec_always --no-startup-id ~/bin/reload
-
-# change theme and reload
-bindsym $mod+Shift+t exec --no-startup-id ~/bin/change_theme

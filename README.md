@@ -14,13 +14,12 @@ more... <br />
 
 ## Most used programs
 Terminal      : XTerm <br />
-Editor        : Nano <br />
+Editor        : Vim <br />
 File Explorer : ranger <br />
-Web Browser   : Firefox ESR <br />
+Web Browser   : IceWeasel <br />
 IDEs:         : Eclipse, IntelliJ <br />
 PDF Viewer    : Zathura <br />
 Image-Viewer  : feh <br />
 
 ## ToDo
-update font color for i3blocks and colors of scripts to match theme <br />
 add scripts from /usr/lib/i3blocks/
