@@ -108,11 +108,11 @@ bindsym	$mod+Shift+r		restart
 # lock screen
 bindsym	$mod+Escape		exec --no-startup-id ~/bin/lock
 # exit i3
-bindsym	$mod+Shift+e		exec --no-startup-id ~/bin/exit_menu
+bindsym	$mod+Shift+Escape	exec --no-startup-id ~/bin/exit_menu
 # change theme and reload
 bindsym	$mod+Shift+t		exec --no-startup-id ~/bin/change_theme
 # quit focused program
-bindsym	$mod+Shift+q		kill
+bindsym	$mod+q			kill
 
 ### Scripts ###
 # on startup
@@ -127,7 +127,7 @@ bindsym	$mod+d			exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -p launch 
 # quick start programs
 bindsym	$mod+Return		exec --no-startup-id xterm
 bindsym	$mod+v			exec --no-startup-id xterm -e vim
-bindsym	$mod+r			exec --no-startup-id xterm -e ranger
+bindsym	$mod+h			exec --no-startup-id xterm -e ranger
 bindsym	$mod+i			exec --no-startup-id firefox
 # default workspaces
 assign	[class="Firefox"]	$workspace2
