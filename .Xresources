@@ -29,7 +29,7 @@
 *color15: wht
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!! XTerm !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-xterm*faceName:		Monace-Linux
+xterm*faceName:		DejaVu
 xterm*faceSize:		10
 xterm*scrollTtyOutput:	true
 

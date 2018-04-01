@@ -8,7 +8,7 @@ noremap j h
 syntax enable
 
 " show line numbers
-set nu
+set relativenumber
 
 " enable smart indent
 set smartindent
@@ -32,3 +32,8 @@ endif
 
 " enable incsearch
 set is
+
+" use backup directory
+set backupdir=${HOME}/.vimbackups
+set directory=${HOME}/.vimbackups
+

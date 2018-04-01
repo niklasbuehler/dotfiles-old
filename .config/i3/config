@@ -85,9 +85,6 @@ bindsym	$mod+7		workspace $workspace7
 bindsym	$mod+8		workspace $workspace8
 bindsym	$mod+9		workspace $workspace9
 bindsym	$mod+0		workspace $workspace10
-# switching to previous/next workspace
-bindsym	$mod+Tab	workspace next
-bindsym	$mod+Shift+Tab	workspace prev
 # moving windows to workspaces
 bindsym	$mod+Shift+1	move container to workspace $workspace1
 bindsym	$mod+Shift+2	move container to workspace $workspace2
@@ -108,7 +105,7 @@ bindsym	$mod+Shift+r		restart
 # lock screen
 bindsym	$mod+Escape		exec --no-startup-id ~/bin/lock
 # exit i3
-bindsym	$mod+Shift+Escape	exec --no-startup-id ~/bin/exit_menu
+bindsym	$mod+Shift+e		exec --no-startup-id ~/bin/exit_menu
 # change theme and reload
 bindsym	$mod+Shift+t		exec --no-startup-id ~/bin/change_theme
 # quit focused program
@@ -128,7 +125,7 @@ bindsym	$mod+d			exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -p launch 
 bindsym	$mod+Return		exec --no-startup-id xterm
 bindsym	$mod+v			exec --no-startup-id xterm -e vim
 bindsym	$mod+h			exec --no-startup-id xterm -e ranger
-bindsym	$mod+i			exec --no-startup-id firefox
+bindsym	$mod+i			exec --no-startup-id iceweasel
 # default workspaces
 assign	[class="Firefox"]	$workspace2
 assign	[class="Eclipse"]	$workspace3
@@ -145,25 +142,25 @@ bindsym	XF86AudioMute		exec --no-startup-id amixer -q set Master toggle
 
 ### General appearance ###
 # nice monospaced font
-font pango:		Monaco-Linux 10
+font pango:		DejaVu 10
 # no title bars or borders
 new_window		1pixel
 hide_edge_borders	both
 
 ### Colors ###
 # load			variable		id		fallback
-set_from_resource	$bg-color		color8		#000000
+set_from_resource	$bg-color		color1		#000000
 set_from_resource	$inactive-bg-color	color0 		#000000
 set_from_resource	$text-color		color7 		#E9ECE8
 set_from_resource	$inactive-text-color	color8 		#444444
-set_from_resource	$urgent-bg-color	color1 		#E56F38
+set_from_resource	$urgent-bg-color	color4 		#E56F38
 set_from_resource	$urgent-text-color	color7 		#7B311E
 # set
 #			border			background		text			indicator
-client.focused		$bg-color		$bg-color		$text-color		#00ff00
-client.unfocused	$inactive-bg-color	$inactive-bg-color	$inactive-text-color	#00ff00
-client.focused_inactive	$inactive-bg-color	$inactive-bg-color	$inactive-text-color	#00ff00
-client.urgent		$urgent-bg-color	$urgent-bg-color	$urgent-text-color	#00ff00
+client.focused		$bg-color		$bg-color		$text-color		$bg-color
+client.unfocused	$inactive-bg-color	$inactive-bg-color	$inactive-text-color	$inactive-bg-color
+client.focused_inactive	$inactive-bg-color	$inactive-bg-color	$inactive-text-color	$inactive-bg-color
+client.urgent		$urgent-bg-color	$urgent-bg-color	$urgent-text-color	$urgent-bg-color
 
 ### i3-bar ###
 bar {
