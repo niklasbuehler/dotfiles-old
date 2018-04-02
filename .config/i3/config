@@ -103,13 +103,16 @@ bindsym	$mod+Shift+c		reload
 # restart i3
 bindsym	$mod+Shift+r		restart
 # lock screen
-bindsym	$mod+Escape		exec --no-startup-id ~/bin/lock
+bindsym	$mod+Escape		exec --no-startup-id ~/bin/lock/lock
 # exit i3
 bindsym	$mod+Shift+e		exec --no-startup-id ~/bin/exit_menu
 # change theme and reload
 bindsym	$mod+Shift+t		exec --no-startup-id ~/bin/change_theme
 # quit focused program
 bindsym	$mod+q			kill
+# switching input languages
+bindsym $mod+Shift+d		exec --no-startup-id setxkbmap de
+bindsym $mod+Shift+u		exec --no-startup-id setxkbmap us
 
 ### Scripts ###
 # on startup
