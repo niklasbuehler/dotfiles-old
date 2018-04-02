@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# choose random theme
+art -r
+# reload xresources
+xrdb -merge ~/.Xresources
+# refresh colors
+i3-msg reload
