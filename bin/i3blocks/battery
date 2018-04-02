@@ -1,0 +1,59 @@
+#!/bin/bash
+# Copyright (C) 2018 Niklas Buehler <niklas dot buehler at student dot kit dot edu>
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+ACPI=$(acpi);
+SPLIT=($ACPI);
+
+STATUS=${SPLIT[2]::-1};
+PERCENTAGE=${SPLIT[3]::-2};
+TIME=${SPLIT[4]::-3};
+
+ICON='';
+if [ $PERCENTAGE -ge 75 ]
+then
+	# >= 75%
+	ICON='';
+elif [ $PERCENTAGE -ge 50 ]
+then
+	# >= 50%
+	ICON='';
+elif [ $PERCENTAGE -ge 25 ]
+then
+	# >= 25%
+	ICON='';
+else
+	# < 25%
+	ICON='';
+fi
+
+if [ $STATUS == 'Charging' ]
+then
+	# charging
+	STATUS='CHR';
+else
+	# discharging
+	STATUS='DIS';
+fi
+
+TIME="($TIME";
+TIME+="h)";
+
+# full text
+echo "$ICON $PERCENTAGE% $TIME";
+# short text
+echo "$ICON $PERCENTAGE% $TIME";
+
+exit 0;
