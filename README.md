@@ -22,4 +22,5 @@ PDF Viewer    : Zathura <br />
 Image-Viewer  : feh <br />
 
 ## ToDo
-add scripts from /usr/lib/i3blocks/
+rewrite all i3block scripts in bash <br />
+use colors from .Xresources in i3block scripts <br />

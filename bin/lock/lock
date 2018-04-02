@@ -2,4 +2,4 @@
 #scrot /tmp/lockscreenbg.png
 #blurlock
 #i3lock -i /tmp/lockscreenbg.png -u
-${HOME}/bin/fancylock --no-text --blur=0x3
+${HOME}/bin/lock/fancylock --no-text --blur=0x3
