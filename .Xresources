@@ -29,7 +29,7 @@
 *color15: wht
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!! XTerm !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-xterm*faceName:		DejaVu
+xterm*faceName:		San Francisco
 xterm*faceSize:		10
 xterm*scrollTtyOutput:	true
 

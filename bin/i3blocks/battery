@@ -51,6 +51,12 @@ fi
 TIME="($TIME";
 TIME+="h)";
 
+# fix messed up output of acpi when fully charged
+if [ $PERCENTAGE -eq 100 ]
+then
+	TIME="full"
+fi
+
 # full text
 echo "$ICON $PERCENTAGE% $TIME";
 # short text

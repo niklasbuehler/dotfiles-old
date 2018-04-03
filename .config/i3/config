@@ -105,7 +105,7 @@ bindsym	$mod+Shift+r		restart
 # lock screen
 bindsym	$mod+Escape		exec --no-startup-id ~/bin/lock/lock
 # exit i3
-bindsym	$mod+Shift+e		exec --no-startup-id ~/bin/exit_menu
+bindsym	$mod+Shift+Escape	exec --no-startup-id ~/bin/exit_menu
 # change theme and reload
 bindsym	$mod+Shift+t		exec --no-startup-id ~/bin/change_theme
 # quit focused program
@@ -145,7 +145,7 @@ bindsym	XF86AudioMute		exec --no-startup-id amixer -q set Master toggle
 
 ### General appearance ###
 # nice monospaced font
-font pango:		DejaVu 10
+font pango:		San Francisco 10
 # no title bars or borders
 new_window		1pixel
 hide_edge_borders	both
@@ -174,7 +174,7 @@ bar {
 		separator	$inactive-text-color
 		statusline	$text-color
 		# colors		border			background		text
-		focused_workspace	$bg-color		$bg-color		$text-color
+		focused_workspace	$inactive-bg-color	$inactive-bg-color		$text-color
 		inactive_workspace	$inactive-bg-color	$inactive-bg-color	$inactive-text-color
 		urgent_workspace	$urgent-bg-color	$urgent-bg-color	$urgent-text-color
 	}
