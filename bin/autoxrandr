@@ -4,11 +4,11 @@ INTERNAL_OUTPUT="eDP-1"
 EXTERNAL_OUTPUT1="DP-2"
 EXTERNAL_OUTPUT2="DP-1"
 
-WS1="1 "
-WS2="2 "
-WS3="3 "
-WS4="4 "
-WS5="5 "
+WS1="1 tty"
+WS2="2 web"
+WS3="3 dev"
+WS4="4 doc"
+WS5="5 file"
 
 xrandr | grep $EXTERNAL_OUTPUT1 | grep " connected "
 if [ $? -eq 0 ]; then

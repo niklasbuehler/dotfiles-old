@@ -64,11 +64,11 @@ mode "resize" {
 }
 
 ### Workspaces ###
-set	$workspace1	"1  tty"
-set	$workspace2	"2  web"
-set	$workspace3	"3  dev"
-set	$workspace4	"4  doc"
-set	$workspace5	"5  file"
+set	$workspace1	"1 tty" # "1  tty"
+set	$workspace2	"2 web" # "2  web"
+set	$workspace3	"3 dev" # "3  dev"
+set	$workspace4	"4 doc" # "4  doc"
+set	$workspace5	"5 file" # "5  file"
 set	$workspace6	"6"
 set	$workspace7	"7"
 set	$workspace8	"8"
