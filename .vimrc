@@ -37,3 +37,5 @@ set is
 set backupdir=${HOME}/.vimbackups
 set directory=${HOME}/.vimbackups
 
+" hardmode to learn vim correctly
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()

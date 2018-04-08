@@ -10,6 +10,7 @@ i3blocks <br />
 art by @gawlk <br />
 compton <br />
 dunst <br />
+unclutter <br />
 more... <br />
 
 ## Most used programs

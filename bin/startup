@@ -11,5 +11,8 @@ i3-msg reload
 # load compton
 compton --config ${HOME}/.config/compton/compton.conf
 
-#start xautolock
+# start xautolock
 xautolock -time 5 -locker ${HOME}/bin/lock
+
+# start unclutter to hide idle cursor
+unclutter -idle 1

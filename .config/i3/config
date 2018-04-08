@@ -169,6 +169,7 @@ client.urgent		$urgent-bg-color	$urgent-bg-color	$urgent-text-color	$urgent-bg-c
 bar {
 	status_command	i3blocks -c ~/.config/i3/i3blocks.conf
 	position	top
+	# mode hide
 	colors {
 		background	$inactive-bg-color
 		separator	$inactive-text-color
