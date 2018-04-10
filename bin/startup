@@ -9,10 +9,11 @@ xrdb -merge ${HOME}/.Xresources
 i3-msg reload
 
 # load compton
-compton --config ${HOME}/.config/compton/compton.conf
+# compton --config ${HOME}/.config/compton/compton.conf
 
 # start xautolock
 xautolock -time 5 -locker ${HOME}/bin/lock
 
-# start unclutter to hide idle cursor
+# reload unclutter
+killall unclutter &> /dev/null
 unclutter -idle 1

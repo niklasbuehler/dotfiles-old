@@ -64,11 +64,11 @@ mode "resize" {
 }
 
 ### Workspaces ###
-set	$workspace1	"1 tty" # "1  tty"
-set	$workspace2	"2 web" # "2  web"
-set	$workspace3	"3 dev" # "3  dev"
-set	$workspace4	"4 doc" # "4  doc"
-set	$workspace5	"5 file" # "5  file"
+set	$workspace1	"1 tty"
+set	$workspace2	"2 web"
+set	$workspace3	"3 dev"
+set	$workspace4	"4 doc"
+set	$workspace5	"5 file"
 set	$workspace6	"6"
 set	$workspace7	"7"
 set	$workspace8	"8"
@@ -122,8 +122,8 @@ exec_always --no-startup-id	~/bin/reload
 
 ### Programs ###
 # launchers
-bindsym	$mod+space		exec --no-startup-id dmenu_run -p run -nb "$inactive-bg-color" -nf "$text-color" -sb "$urgent-bg-color" -sf "$urgent-text-color" -fn "Monaco-Linux:pixelsize=14"
-bindsym	$mod+d			exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -p launch -nb '$inactive-bg-color' -nf '$text-color' -sb '$urgent-bg-color' -sf '$urgent-text-color' -fn 'Monaco-Linux:pixelsize=14'"
+bindsym	$mod+space		exec --no-startup-id dmenu_run -p run -nb "$inactive-bg-color" -nf "$text-color" -sb "$urgent-bg-color" -sf "$urgent-text-color" -fn "San Francisco:pixelsize=14"
+bindsym	$mod+d			exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -p launch -nb '$inactive-bg-color' -nf '$text-color' -sb '$urgent-bg-color' -sf '$urgent-text-color' -fn 'San Francisco:pixelsize=14'"
 # quick start programs
 bindsym	$mod+Return		exec --no-startup-id xterm
 bindsym	$mod+v			exec --no-startup-id xterm -e vim

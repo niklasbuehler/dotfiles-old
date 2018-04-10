@@ -39,3 +39,5 @@ set directory=${HOME}/.vimbackups
 
 " hardmode to learn vim correctly
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+" but also not too hard for now hehe
+let g:HardMode_level='wannabe'

@@ -6,10 +6,10 @@ ${HOME}/bin/autoxrandr
 # reload x resources
 xrdb -merge ${HOME}/.Xresources
 
+# reload compton
+# killall compton &> /dev/null
+# compton --config ${HOME}/.config/compton/compton.conf
+
 # reload dunst
 killall dunst &> /dev/null
 dunst -config ${HOME}/.config/dunst/config
-
-# todo: remove this
-killall compton &> /dev/null
-compton --config ${HOME}/.config/compton/compton.conf
