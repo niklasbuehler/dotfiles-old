@@ -1,9 +1,3 @@
-" remap navigation keys
-noremap ; l
-noremap l k
-noremap k j
-noremap j h
-
 " enable syntax highlighting
 syntax enable
 
