@@ -27,7 +27,6 @@ if [ $PERCENTAGE -ge 75 ]
 then
 	# >= 75%
 	ICON='';
-	COLOR=\#00FF00;
 elif [ $PERCENTAGE -ge 50 ]
 then
 	# >= 50%
