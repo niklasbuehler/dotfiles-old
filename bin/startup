@@ -12,7 +12,7 @@ i3-msg reload
 # compton --config ${HOME}/.config/compton/compton.conf
 
 # start xautolock
-xautolock -time 5 -locker ${HOME}/bin/lock
+xautolock -detectsleep -time 5 -locker ${HOME}/bin/lock
 
 # reload unclutter
 killall unclutter &> /dev/null
