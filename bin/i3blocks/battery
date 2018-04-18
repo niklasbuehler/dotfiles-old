@@ -22,27 +22,34 @@ PERCENTAGE=${SPLIT[3]::-2};
 TIME=${SPLIT[4]::-3};
 
 ICON='';
+COLOR=\#FFFFFF;
 if [ $PERCENTAGE -ge 75 ]
 then
 	# >= 75%
 	ICON='';
+	COLOR=\#00FF00;
 elif [ $PERCENTAGE -ge 50 ]
 then
 	# >= 50%
 	ICON='';
+	COLOR=\#FFFFFF;
 elif [ $PERCENTAGE -ge 25 ]
 then
 	# >= 25%
 	ICON='';
+	COLOR=\#FF6633;
 else
 	# < 25%
 	ICON='';
+	COLOR=\#FF0000;
 fi
 
 if [ $STATUS == 'Charging' ]
 then
 	# charging
+	ICON='';
 	STATUS='CHR';
+	COLOR=\#00FF00;
 else
 	# discharging
 	STATUS='DIS';
@@ -61,5 +68,6 @@ fi
 echo "$ICON $PERCENTAGE% $TIME";
 # short text
 echo "$ICON $PERCENTAGE% $TIME";
-
+# color
+echo $COLOR;
 exit 0;
