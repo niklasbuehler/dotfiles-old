@@ -22,16 +22,16 @@ PERCENTAGE=${SPLIT[3]::-2};
 TIME=${SPLIT[4]::-3};
 
 ICON='';
-COLOR=\#FFFFFF;
+COLOR='';
 if [ $PERCENTAGE -ge 75 ]
 then
 	# >= 75%
 	ICON='';
+	COLOR=\#55CC55;
 elif [ $PERCENTAGE -ge 50 ]
 then
 	# >= 50%
 	ICON='';
-	COLOR=\#FFFFFF;
 elif [ $PERCENTAGE -ge 25 ]
 then
 	# >= 25%
@@ -41,6 +41,7 @@ else
 	# < 25%
 	ICON='';
 	COLOR=\#FF0000;
+	#TIME=${SPLIT[4]};
 fi
 
 if [ $STATUS == 'Charging' ]
