@@ -123,8 +123,8 @@ bindsym	$mod+d			exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -p launch 
 # quick start programs
 bindsym	$mod+Return		exec --no-startup-id xterm
 bindsym	$mod+v			exec --no-startup-id xterm -e vim
-bindsym	$mod+f			exec --no-startup-id xterm -e ranger
-bindsym	$mod+i			exec --no-startup-id iceweasel
+bindsym	$mod+f			exec --no-startup-id i3-msg 'workspace $workspace5'; exec --no-startup-id xterm -e ranger
+bindsym	$mod+i			exec --no-startup-id i3-msg 'workspace $workspace2'; exec --no-startup-id iceweasel
 # default workspaces
 assign	[class="Firefox"]	$workspace2
 assign	[class="Eclipse"]	$workspace3

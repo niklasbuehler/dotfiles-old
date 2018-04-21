@@ -9,7 +9,7 @@ xrdb -merge ${HOME}/.Xresources
 i3-msg reload
 
 # load compton
-# compton --config ${HOME}/.config/compton/compton.conf
+compton --config ${HOME}/.config/compton/compton.conf
 
 # start xautolock
 xautolock -detectsleep -time 5 -locker ${HOME}/bin/lock

@@ -7,8 +7,8 @@ ${HOME}/bin/autoxrandr
 xrdb -merge ${HOME}/.Xresources
 
 # reload compton
-# killall compton &> /dev/null
-# compton --config ${HOME}/.config/compton/compton.conf
+killall compton &> /dev/null
+compton --config ${HOME}/.config/compton/compton.conf
 
 # reload dunst
 killall dunst &> /dev/null
