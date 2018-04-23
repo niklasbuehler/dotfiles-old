@@ -118,8 +118,8 @@ exec_always --no-startup-id	~/bin/reload
 
 ### Programs ###
 # launchers
-bindsym	$mod+space		exec --no-startup-id dmenu_run -p run -nb "$inactive-bg-color" -nf "$text-color" -sb "$urgent-bg-color" -sf "$urgent-text-color" -fn "San Francisco:pixelsize=14"
-bindsym	$mod+d			exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -p launch -nb '$inactive-bg-color' -nf '$text-color' -sb '$urgent-bg-color' -sf '$urgent-text-color' -fn 'San Francisco:pixelsize=14'"
+bindsym	$mod+space		exec --no-startup-id dmenu_run -p run -nb "$inactive-bg-color" -nf "$text-color" -sb "$urgent-bg-color" -sf "$urgent-text-color" -fn "Hack:pixelsize=16"
+bindsym	$mod+d			exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -p launch -nb '$inactive-bg-color' -nf '$text-color' -sb '$urgent-bg-color' -sf '$urgent-text-color' -fn 'Hack:pixelsize=16'"
 # quick start programs
 bindsym	$mod+Return		exec --no-startup-id xterm
 bindsym	$mod+v			exec --no-startup-id xterm -e vim
@@ -141,7 +141,7 @@ bindsym	XF86AudioMute		exec --no-startup-id amixer -q set Master toggle
 
 ### General appearance ###
 # nice monospaced font
-font pango:		San Francisco 10
+font pango:		Hack 10
 # no title bars or borders
 new_window		1pixel
 hide_edge_borders	both

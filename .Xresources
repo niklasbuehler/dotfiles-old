@@ -29,7 +29,7 @@
 *color15: wht
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!! XTerm !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-xterm*faceName:		San Francisco
+xterm*faceName:		Hack
 xterm*faceSize:		10
 xterm*scrollTtyOutput:	true
 
