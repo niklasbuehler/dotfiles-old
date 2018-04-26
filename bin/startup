@@ -1,19 +1,21 @@
 #!/bin/bash
 # script to be executed on i3wm startup
 
-# choose random theme
+# load theme
 art -n 'wetleaf'
 # reload xresources
 xrdb -merge ${HOME}/.Xresources
 # refresh colors
 i3-msg reload
 
+# load unclutter
+unclutter -idle 1  &
+
 # load compton
-compton --config ${HOME}/.config/compton/compton.conf
+compton --config ${HOME}/.config/compton/compton.conf &
+
+# load dunst
+dunst -config ${HOME}/.config/dunst/config &
 
 # start xautolock
-xautolock -detectsleep -notifier "notify-send 'Locking screen in 60s...'" -notify 60 -time 5 -locker ${HOME}/bin/lock/lock
-
-# reload unclutter
-killall unclutter &> /dev/null
-unclutter -idle 1
+xautolock -detectsleep -time 5 -locker ${HOME}/bin/lock/lock

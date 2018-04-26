@@ -17,7 +17,7 @@ more... <br />
 Terminal      : XTerm <br />
 Editor        : Vim <br />
 File Explorer : ranger <br />
-Web Browser   : IceWeasel <br />
+Web Browser   : IceWeasel with Vimperator<br />
 IDEs:         : Eclipse, IntelliJ <br />
 PDF Viewer    : Zathura <br />
 Image-Viewer  : feh <br />
