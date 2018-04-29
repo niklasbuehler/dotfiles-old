@@ -149,12 +149,12 @@ hide_edge_borders	both
 
 ### Colors ###
 # load			variable		id		fallback
-set_from_resource	$bg-color		color1		#000000
+set_from_resource	$bg-color		color8		#000000
 set_from_resource	$inactive-bg-color	color0 		#000000
-set_from_resource	$text-color		color7 		#E9ECE8
-set_from_resource	$inactive-text-color	color8 		#444444
-set_from_resource	$urgent-bg-color	color4 		#E56F38
-set_from_resource	$urgent-text-color	color7 		#7B311E
+set_from_resource	$text-color		color15		#E9ECE8
+set_from_resource	$inactive-text-color	color7 		#444444
+set_from_resource	$urgent-bg-color	color0 		#E56F38
+set_from_resource	$urgent-text-color	color9 		#7B311E
 # set
 #			border			background		text			indicator
 client.focused		$bg-color		$bg-color		$text-color		$bg-color
@@ -169,10 +169,10 @@ bar {
 	# mode hide
 	colors {
 		background	$inactive-bg-color
-		separator	$inactive-text-color
+		separator	$bg-color
 		statusline	$text-color
 		# colors		border			background		text
-		focused_workspace	$inactive-bg-color	$inactive-bg-color		$text-color
+		focused_workspace	$bg-color		$bg-color		$text-color
 		inactive_workspace	$inactive-bg-color	$inactive-bg-color	$inactive-text-color
 		urgent_workspace	$urgent-bg-color	$urgent-bg-color	$urgent-text-color
 	}
