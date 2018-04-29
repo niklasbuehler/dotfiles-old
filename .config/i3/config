@@ -65,7 +65,7 @@ set	$workspace2	"2 web"
 set	$workspace3	"3 dev"
 set	$workspace4	"4 doc"
 set	$workspace5	"5 file"
-set	$workspace6	"6 cal"
+set	$workspace6	"6 mail"
 set	$workspace7	"7 gfx"
 set	$workspace8	"8"
 set	$workspace9	"9"
@@ -124,8 +124,8 @@ bindsym	$mod+d			exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -p launch 
 bindsym	$mod+Return		exec --no-startup-id xterm
 bindsym	$mod+v			exec --no-startup-id xterm -e vim
 bindsym	$mod+f			exec --no-startup-id i3-msg 'workspace $workspace5'; exec --no-startup-id xterm -e ranger
-bindsym	$mod+i			exec --no-startup-id i3-msg 'workspace $workspace2'; exec --no-startup-id iceweasel
-bindsym $mod+c			exec --no-startup-id i3-msg 'workspace $workspace6'; exec --no-startup-id thunderbird
+bindsym	$mod+i			exec --no-startup-id i3-msg 'workspace $workspace2'; exec --no-startup-id qutebrowser
+bindsym $mod+m			exec --no-startup-id i3-msg 'workspace $workspace6'; exec --no-startup-id xterm -e mutt
 # default workspaces
 assign	[class="Firefox"]	$workspace2
 assign	[class="Eclipse"]	$workspace3

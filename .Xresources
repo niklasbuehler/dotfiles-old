@@ -32,6 +32,7 @@
 xterm*faceName:		Hack
 xterm*faceSize:		10
 xterm*scrollTtyOutput:	true
+xterm*cursorBlink: true
 
 xterm*foreground:	wht
 xterm*background:	blk

@@ -1,0 +1,12 @@
+source ~/.mutt/personal
+set folder = 'imaps://imap.gmail.com:993'
+set spoolfile = '+INBOX'
+set record = /dev/null
+set postponed = "+[Gmail]/Drafts"
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
+color status blue black
