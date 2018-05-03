@@ -2,7 +2,7 @@
 syntax enable
 
 " show line numbers
-set number relativenumber
+set relativenumber
 
 " enable smart indent
 set smartindent

@@ -12,6 +12,7 @@ art by @gawlk <br />
 compton <br />
 dunst <br />
 unclutter <br />
+query-gmail by @su8 <br />
 more... <br />
 
 ## Most used programs

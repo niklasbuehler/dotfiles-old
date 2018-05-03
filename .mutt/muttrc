@@ -10,3 +10,6 @@ set ssl_starttls = yes
 set ssl_force_tls = yes
 
 color status blue black
+
+bind index G imap-fetch-mail
+set timeout = 60
