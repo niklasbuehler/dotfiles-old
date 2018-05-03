@@ -24,7 +24,3 @@ IDEs:         	: Eclipse, IntelliJ <br />
 PDF Viewer    	: zathura <br />
 Image-Viewer  	: feh <br />
 Mail		: mutt <br />
-
-## ToDo
-rewrite all i3block scripts in bash <br />
-use colors from .Xresources in i3block scripts <br />

@@ -13,3 +13,5 @@ color status blue black
 
 bind index G imap-fetch-mail
 set timeout = 60
+
+source ~/.mutt/colors
