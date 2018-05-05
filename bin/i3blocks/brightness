@@ -1,0 +1,18 @@
+#!/bin/bash
+
+ICON=""
+XBACKLIGHT=$(xbacklight -get);
+PERC=${XBACKLIGHT%.*};
+if [ $PERC -ge 50 ]
+then
+	ICON="";
+else
+	ICON="";
+fi
+
+if [ -n "$BLOCK_BUTTON" ]
+then
+	exec ~/bin/switchtheme
+fi
+
+echo "$ICON $PERC%";

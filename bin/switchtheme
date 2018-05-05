@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# switch the theme from dark to light and vice versa
+
+art -s
+xrdb -merge .Xresources
+i3-msg reload
