@@ -28,17 +28,17 @@ then
 	# >= 75%
 	ICON='';
 	COLOR=\#55CC55;
-elif [ $PERCENTAGE -ge 50 ]
+elif [ $PERCENTAGE -ge 25 ]
 then
 	# >= 50%
 	ICON='';
-elif [ $PERCENTAGE -ge 25 ]
+elif [ $PERCENTAGE -ge 15 ]
 then
-	# >= 25%
+	# >= 15%
 	ICON='';
 	COLOR=\#EEAA00;
 else
-	# < 25%
+	# < 15%
 	ICON='';
 	COLOR=\#FF0000;
 	#TIME=${SPLIT[4]};

@@ -2,7 +2,7 @@
 # script to be executed on i3wm startup
 
 # load theme
-art -n 'turtle'
+art
 # reload xresources
 xrdb -merge ${HOME}/.Xresources
 # refresh colors

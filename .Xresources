@@ -28,6 +28,14 @@
 *color7:  wht
 *color15: wht
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!! General !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*background:	blk
+*foreground:	wht
+*gray:		gry
+*red:		red
+*green:		grn
+*blue:		blu
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!! XTerm !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 xterm*faceName:		Hack
 xterm*faceSize:		10
