@@ -14,4 +14,10 @@ color status blue black
 bind index G imap-fetch-mail
 set timeout = 60
 
+set pager=less
+auto_view text/html
+set editor=vim
+
+macro index,pager S "| ~/bin/savemail ~/mail<enter>"
+
 source ~/.mutt/colors

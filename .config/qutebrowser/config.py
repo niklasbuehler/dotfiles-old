@@ -44,7 +44,7 @@ xresources = read_xresources('*')
 ## Valid values:
 ##   - webengine: Use QtWebEngine (based on Chromium).
 ##   - webkit: Use QtWebKit (based on WebKit, similar to Safari).
-# c.backend = 'webengine'
+c.backend = 'webkit'
 
 ## This setting can be used to map keys to other keys. When the key used
 ## as dictionary-key is pressed, the binding for the key used as
@@ -100,7 +100,7 @@ c.colors.completion.item.selected.fg = xresources['*foreground']
 
 ## Foreground color of the matched text in the completion.
 ## Type: QssColor
-c.colors.completion.match.fg = xresources['*red']
+# c.colors.completion.match.fg = xresources['*red']
 
 ## Background color of the completion widget for odd rows.
 ## Type: QssColor

@@ -13,6 +13,7 @@ compton <br />
 dunst <br />
 unclutter <br />
 query-gmail by @su8 <br />
+mpack <br />
 more... <br />
 
 ## Most used programs
