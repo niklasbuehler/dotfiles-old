@@ -18,6 +18,7 @@ set pager=less
 auto_view text/html
 set editor=vim
 
-macro index,pager S "| ~/bin/savemail ~/mail<enter>"
+# shortcut to save mail and attachments to folder
+macro index,pager s "| ~/bin/savemail ~/mail<enter>"
 
 source ~/.mutt/colors

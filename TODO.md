@@ -9,4 +9,3 @@ Things i need to fix or add to my dotfiles. <br />
 * fix libwidevine for qutebrowser
 * fix pdf.js in qutebrowser
 * fix xbacklight changing by 11 or 9 percent instead of 9
-* fix mail saving script
