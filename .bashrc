@@ -117,6 +117,3 @@ PATH=$PATH:${HOME}/bin/art
 
 export EDITOR='vim'
 export PAGER='less'
-
-# enable vim mode in terminal
-set -o vi

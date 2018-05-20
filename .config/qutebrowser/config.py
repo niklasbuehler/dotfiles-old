@@ -1348,7 +1348,7 @@ c.qt.args = ["[ppapi-widevine-path=/usr/lib/qt5/plugins/ppapi/libwidevinecdmadap
 ## used by prepending the search engine name to the search term, e.g.
 ## `:open google qutebrowser`.
 ## Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'dict': 'https://dict.cc/?s={}', 'yt': 'https://youtube.com/results?search_query={}'}
+c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'dict': 'https://dict.cc/?s={}', 'yt': 'https://youtube.com/results?search_query={}', 'wiki': 'https://wikipedia.org/w/index.php?search={}'}
 
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
