@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # This script uses the query-gmail script written by @su8, find it on github!
-exit 33;
+
 UNREAD=$(mail);
 ICON="";
 if [ $UNREAD -ge 1 ]

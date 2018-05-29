@@ -176,7 +176,7 @@ bar {
 	position	top
 	# mode hide
 	colors {
-		background	$inactive-bg-color
+		background	#000000 #$inactive-bg-color
 		separator	$bg-color
 		statusline	$text-color
 		# colors		border			background		text
