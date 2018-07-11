@@ -35,3 +35,6 @@ set directory=${HOME}/.vimbackups
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 " but also not too hard for now hehe
 let g:HardMode_level='wannabe'
+
+" use the X system clipboard
+set clipboard=unnamedplus

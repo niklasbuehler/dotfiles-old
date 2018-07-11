@@ -62,9 +62,6 @@ mode "resize" {
     bindsym	Escape	mode "default"
 }
 
-# inplace resizing
-bindsym $mod+w	floating toggle; resize grow width 750px or 325ppt; resize grow height 400px or 200ppt; move absolute position center
-
 ### Workspaces ###
 set	$workspace1	"1 tty"
 set	$workspace2	"2 web"
@@ -144,7 +141,7 @@ bindsym	XF86AudioRaiseVolume	exec --no-startup-id amixer -q set Master 10%+ unmu
 bindsym	XF86AudioLowerVolume	exec --no-startup-id amixer -q set Master 10%- unmute
 bindsym	XF86AudioMute		exec --no-startup-id amixer -q set Master toggle
 bindsym XF86MonBrightnessUp	exec --no-startup-id xbacklight + 10
-bindsym+ XF86MonBrightnessDown	exec --no-startup-id xbacklight - 10
+bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight - 10
 
 ###################################################
 ################### Appearance ####################
@@ -156,6 +153,11 @@ font pango:		Hack 10
 # no title bars or borders
 new_window		1pixel
 hide_edge_borders	smart
+
+### gaps ###
+smart_borders on
+gaps outer 25
+gaps inner 15
 
 ### Colors ###
 # load			variable		id		fallback
