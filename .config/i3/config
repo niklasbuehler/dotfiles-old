@@ -61,6 +61,16 @@ mode "resize" {
     bindsym	Return	mode "default"
     bindsym	Escape	mode "default"
 }
+# normal mode
+bindsym $mod+n			mode "normal"
+mode "normal" {
+    bindsym	h	focus left
+    bindsym	j	focus down
+    bindsym	k	focus up
+    bindsym	l	focus right
+    bindsym	i	mode "default"
+    bindsym	Escape	mode "default"
+}
 
 ### Workspaces ###
 set	$workspace1	"1 tty"
@@ -155,7 +165,7 @@ new_window		1pixel
 hide_edge_borders	smart
 
 ### gaps ###
-smart_borders on
+#smart_borders on
 gaps outer 25
 gaps inner 15
 
