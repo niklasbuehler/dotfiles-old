@@ -61,16 +61,6 @@ mode "resize" {
     bindsym	Return	mode "default"
     bindsym	Escape	mode "default"
 }
-# normal mode
-bindsym $mod+n			mode "normal"
-mode "normal" {
-    bindsym	h	focus left
-    bindsym	j	focus down
-    bindsym	k	focus up
-    bindsym	l	focus right
-    bindsym	i	mode "default"
-    bindsym	Escape	mode "default"
-}
 
 ### Workspaces ###
 set	$workspace1	"1 tty"
@@ -115,8 +105,6 @@ bindsym	$mod+Shift+r		restart
 bindsym	$mod+Escape		exec --no-startup-id ~/bin/lock/lock
 # exit i3
 bindsym	$mod+Shift+Escape	exec --no-startup-id ~/bin/exit_menu
-# change theme and reload
-bindsym	$mod+Shift+t		exec --no-startup-id ~/bin/change_theme
 # quit focused program
 bindsym	$mod+q			kill
 # switching input languages
@@ -141,6 +129,9 @@ bindsym $mod+u			exec --no-startup-id i3-msg 'workspace $workspace5'; exec --no-
 bindsym	$mod+i			exec --no-startup-id i3-msg 'workspace $workspace2'; exec --no-startup-id qutebrowser
 bindsym $mod+m			exec --no-startup-id i3-msg 'workspace $workspace6'; exec --no-startup-id xterm -e mutt
 bindsym $mod+p			exec --no-startup-id i3-msg 'workspace $workspace4'; exec --no-startup-id zathura
+bindsym $mod+n			exec --no-startup-id xterm -e newsboat
+bindsym $mod+w			exec --no-startup-id xterm -e 'curl wttr.in/Offenburg & sleep 10'
+bindsym $mod+Shift+t		exec --no-startup-id bin/themeselect
 # default workspaces
 assign	[class="Firefox"]	$workspace2
 assign	[class="Eclipse"]	$workspace3
@@ -166,8 +157,8 @@ hide_edge_borders	smart
 
 ### gaps ###
 #smart_borders on
-gaps outer 25
-gaps inner 15
+gaps outer 50
+gaps inner 25
 
 ### Colors ###
 # load			variable		id		fallback
@@ -187,8 +178,24 @@ client.urgent		$urgent-bg-color	$urgent-bg-color	$urgent-text-color	$urgent-bg-c
 ### i3-bar ###
 bar {
 	status_command	i3blocks -c ~/.config/i3/i3blocks.conf
+	position bottom
+	mode invisible
+	workspace_buttons no
+	colors {
+		background	$inactive-bg-color
+		separator	$bg-color
+		statusline	$text-color
+		# colors		border			background		text
+		focused_workspace	$bg-color		$bg-color		$text-color
+		inactive_workspace	$inactive-bg-color	$inactive-bg-color	$inactive-text-color
+		urgent_workspace	$urgent-bg-color	$urgent-bg-color	$urgent-text-color
+	}
+}
+
+bar {
+	status_command	i3blocks -c ~/.config/i3/i3blocks.conf
 	position top
-	# mode hide
+	mode hide
 	colors {
 		background	$inactive-bg-color
 		separator	$bg-color
