@@ -38,3 +38,12 @@ let g:HardMode_level='wannabe'
 
 " use the X system clipboard
 set clipboard=unnamedplus
+
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+
+" Goyo and Limelight setup
+let g:goyo_linenr=1
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!

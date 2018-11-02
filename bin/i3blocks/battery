@@ -16,13 +16,21 @@
 
 ACPI=$(acpi);
 SPLIT=($ACPI);
-
 STATUS=${SPLIT[2]::-1};
 PERCENTAGE=${SPLIT[3]::-2};
 TIME=${SPLIT[4]::-3};
 
 ICON='';
 COLOR='';
+
+# fix strange displaystyle of acpi:
+# not charging, 99% -> 100% full
+if [ $PERCENTAGE = 'chargin' ]
+then
+	PERCENTAGE=100;
+fi
+
+
 if [ $PERCENTAGE -ge 75 ]
 then
 	# >= 75%

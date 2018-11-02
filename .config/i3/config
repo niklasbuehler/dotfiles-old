@@ -26,13 +26,11 @@ bindsym	$mod+$left		focus left
 bindsym	$mod+$down		focus down
 bindsym	$mod+$up		focus up
 bindsym	$mod+$right		focus right
-# moving focused windows (floating), once is too slow
-bindsym	$mod+Shift+$left	move left; move left
-bindsym	$mod+Shift+$down	move down; move down
-bindsym	$mod+Shift+$up		move up; move up
-bindsym	$mod+Shift+$right	move right; move right
-# sticky windows
-bindsym $mod+Shift+s			sticky toggle
+# moving focused window
+bindsym	$mod+Shift+$left	move left
+bindsym	$mod+Shift+$down	move down
+bindsym	$mod+Shift+$up		move up
+bindsym	$mod+Shift+$right	move right
 # moving current workspace
 bindsym	$mod+Shift+Prior	move workspace to output left
 bindsym	$mod+Shift+Next		move workspace to output right
@@ -43,9 +41,6 @@ bindsym	$mod+t			layout tabbed
 bindsym	$mod+s			layout toggle split
 # enter fullscreen mode for the focused container
 bindsym	F11			fullscreen
-# switch focus between tiled and floating windows
-bindsym	$mod+Tab		focus mode_toggle
-# moving floating windows
 # toggle floating
 bindsym	$mod+Shift+f		floating toggle
 floating_modifier $mod+Shift
@@ -115,8 +110,6 @@ bindsym	$mod+q			kill
 # switching input languages
 bindsym $mod+Shift+d		exec --no-startup-id setxkbmap de
 bindsym $mod+Shift+u		exec --no-startup-id setxkbmap us
-# toggle bar
-bindsym $mod+b			bar hidden_state toggle
 
 ### Scripts ###
 # on startup
@@ -126,19 +119,18 @@ exec_always --no-startup-id	~/bin/reload
 
 ### Programs ###
 # launchers
-bindsym	$mod+space		exec --no-startup-id dmenu_run -p run -nb "$inactive-bg-color" -nf "$text-color" -sb "$urgent-bg-color" -sf "$urgent-text-color" -fn "Hack:pixelsize=17"
-bindsym	$mod+d			exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -p launch -nb '$inactive-bg-color' -nf '$text-color' -sb '$urgent-bg-color' -sf '$urgent-text-color' -fn 'Hack:pixelsize=17'"
+bindsym	$mod+space		exec --no-startup-id dmenu_run -b -p run -nb "$inactive-bg-color" -nf "$text-color" -sb "$urgent-bg-color" -sf "$urgent-text-color" -fn "Hack:pixelsize=17"
+bindsym	$mod+d			exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -b -p launch -nb '$inactive-bg-color' -nf '$text-color' -sb '$urgent-bg-color' -sf '$urgent-text-color' -fn 'Hack:pixelsize=17'"
 # quick start programs
-bindsym	$mod+Return		exec --no-startup-id xterm
+bindsym	$mod+Return		exec --no-startup-id xterm -e fish
 bindsym	$mod+v			exec --no-startup-id xterm -e vim
 bindsym	$mod+f			exec --no-startup-id i3-msg 'workspace $workspace5'; exec --no-startup-id xterm -e ranger
 bindsym $mod+u			exec --no-startup-id i3-msg 'workspace $workspace5'; exec --no-startup-id xterm -e 'ranger Documents/KIT/WS1819'
 bindsym	$mod+i			exec --no-startup-id i3-msg 'workspace $workspace2'; exec --no-startup-id firefox
 bindsym $mod+m			exec --no-startup-id i3-msg 'workspace $workspace6'; exec --no-startup-id xterm -e mutt
-bindsym $mod+p			exec --no-startup-id i3-msg 'workspace $workspace4'; exec --no-startup-id zathura
 bindsym $mod+a			exec --no-startup-id i3-msg 'workspace $workspace3'; exec --no-startup-id /opt/android-studio/bin/studio.sh
 bindsym $mod+n			exec --no-startup-id xterm -e newsboat
-bindsym $mod+w			exec --no-startup-id xterm -e 'curl wttr.in/Offenburg & sleep 10'
+bindsym $mod+w			exec --no-startup-id xterm -e 'curl wttr.in/Karlsruhe & sleep 10'
 bindsym $mod+Shift+t		exec --no-startup-id bin/themeselect
 # default workspaces
 assign	[class="Firefox"]	$workspace2
@@ -165,7 +157,7 @@ hide_edge_borders	smart
 
 ### gaps ###
 #smart_borders on
-gaps outer 50
+gaps outer 30
 gaps inner 25
 
 ### Colors ###
@@ -186,11 +178,10 @@ client.urgent		$urgent-bg-color	$urgent-bg-color	$urgent-text-color	$urgent-bg-c
 ### i3-bar ###
 bar {
 	status_command	i3blocks -c ~/.config/i3/i3blocks.conf
-	position bottom
+	position top
 	mode invisible
-	workspace_buttons no
 	colors {
-		background	$inactive-bg-color
+		background	#000000
 		separator	$bg-color
 		statusline	$text-color
 		# colors		border			background		text
@@ -200,16 +191,3 @@ bar {
 	}
 }
 
-bar {
-	status_command	i3blocks -c ~/.config/i3/i3blocks.conf
-	position top
-	colors {
-		background	$inactive-bg-color
-		separator	$bg-color
-		statusline	$text-color
-		# colors		border			background		text
-		focused_workspace	$bg-color		$bg-color		$text-color
-		inactive_workspace	$inactive-bg-color	$inactive-bg-color	$inactive-text-color
-		urgent_workspace	$urgent-bg-color	$urgent-bg-color	$urgent-text-color
-	}
-}

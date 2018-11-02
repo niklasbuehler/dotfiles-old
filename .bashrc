@@ -84,6 +84,16 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+man() {
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;44;33m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    command man "$@"
+}
+
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
@@ -112,8 +122,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# turn off system bell
+if [ -n "$DISPLAY" ]; then
+  xset b off
+fi
+
 PATH=$PATH:${HOME}/bin
 PATH=$PATH:${HOME}/bin/art
 
 export EDITOR='vim'
 export PAGER='less'
+export TERM='xterm-256color'
