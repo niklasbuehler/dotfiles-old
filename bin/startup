@@ -18,7 +18,7 @@ compton --config ${HOME}/.config/compton/compton.conf &
 dunst -config ${HOME}/.config/dunst/config &
 
 # load conky
-conky &
+# conky &
 
 # load redshift
 redshift -l 49.006889:8.403653 &

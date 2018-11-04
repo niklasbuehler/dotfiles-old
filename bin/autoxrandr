@@ -35,5 +35,15 @@ else
 	i3-msg "workspace $WS5; move workspace to output $INTERNAL_OUTPUT"
 fi
 
+# show polybar on every monitor
+pkill polybar
+if type "xrandr"; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    MONITOR=$m polybar --reload mybar &
+  done
+else
+  polybar --reload mybar &
+fi
+
 # change back from workspace 5 to workspace 1
 i3-msg "workspace $WS1"

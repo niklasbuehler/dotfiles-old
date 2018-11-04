@@ -7,21 +7,23 @@ The main goal of this setup is to have uniform (vim-like) keybindings that fully
 
 ## Dependencies
 i3-gaps <br />
-i3blocks <br />
+polybar <br />
 art by @gawlk <br />
 compton <br />
 dunst <br />
 unclutter <br />
-query-gmail by @su8 <br />
-mpack <br />
 more... <br />
 
-## Most used programs
+## Standard programs
 Terminal     	: xterm <br />
 Editor     	: vim <br />
+Pager		: less <br />
 File Explorer 	: ranger <br />
-Web Browser  	: qutebrowser <br />
-IDEs:         	: Eclipse, IntelliJ <br />
+Web Browser  	: Firefox + Vim Vixen <br />
+IDE:         	: IntelliJ + Vim Emulator <br />
 PDF Viewer    	: zathura <br />
 Image-Viewer  	: feh <br />
-Mail		: mutt <br />
+
+## Vim Plugin
+Hardmode <br />
+Goyo + Limelight <br />

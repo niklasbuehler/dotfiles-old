@@ -1,3 +1,6 @@
+set nocompatible
+filetype plugin on
+
 " enable syntax highlighting
 syntax enable
 
@@ -39,7 +42,7 @@ let g:HardMode_level='wannabe'
 " use the X system clipboard
 set clipboard=unnamedplus
 
-" Color name (:help cterm-colors) or ANSI code
+" set colors for limelight plugin
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
 
@@ -47,3 +50,6 @@ let g:limelight_conceal_ctermfg = 240
 let g:goyo_linenr=1
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
+" jumptag
+inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
