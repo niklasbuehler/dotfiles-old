@@ -119,8 +119,8 @@ exec_always --no-startup-id	~/bin/reload
 
 ### Programs ###
 # launchers
-bindsym	$mod+space		exec --no-startup-id dmenu_run -b -p run -nb "$inactive-bg-color" -nf "$text-color" -sb "$urgent-bg-color" -sf "$urgent-text-color" -fn "Hack:pixelsize=17"
-bindsym	$mod+d			exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -b -p launch -nb '$inactive-bg-color' -nf '$text-color' -sb '$urgent-bg-color' -sf '$urgent-text-color' -fn 'Hack:pixelsize=17'"
+bindsym	$mod+space		exec --no-startup-id dmenu_run -b -p run -nb "$inactive-bg-color" -nf "$text-color" -sb "$urgent-bg-color" -sf "$urgent-text-color" -fn "$font:pixelsize=17"
+bindsym	$mod+d			exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -b -p launch -nb '$inactive-bg-color' -nf '$text-color' -sb '$urgent-bg-color' -sf '$urgent-text-color' -fn '$font:pixelsize=17'"
 # quick start programs
 bindsym	$mod+Return		exec --no-startup-id xterm -e fish
 bindsym	$mod+v			exec --no-startup-id xterm -e vim
@@ -150,7 +150,8 @@ bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight - 10
 
 ### General appearance ###
 # nice monospaced font
-font pango:		Hack 10
+set			$font		DejaVu
+font pango:		$font 10
 # no title bars or borders
 new_window		1pixel
 hide_edge_borders	smart

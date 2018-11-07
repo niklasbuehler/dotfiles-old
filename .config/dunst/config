@@ -1,5 +1,5 @@
 [global]
-    font = Monospace 8
+    font = DejaVu 8
 
     # allow a small subset of html markup:
     # <b>bold</b>
@@ -115,7 +115,7 @@
     # print a notification on startup
     # This is mainly for error detection, since dbus (re-)starts dunst
     # automatically after a crash.
-    # startup_notification = true
+    startup_notification = false
 
     # dmenu path
     dmenu = /usr/bin/dmenu -p dunst:
@@ -146,12 +146,12 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
-    background = "#555555"
-    foreground = "#888888"
+    background = "#333333"
+    foreground = "#999999"
     timeout = 10
 
 [urgency_normal]
-    background = "#285577"
+    background = "#000000"
     foreground = "#ffffff"
     timeout = 15
 

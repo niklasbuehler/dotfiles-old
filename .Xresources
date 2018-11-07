@@ -37,7 +37,7 @@
 *blue:		blu
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!! XTerm !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-xterm*faceName:		Hack
+xterm*faceName:		DejaVu
 xterm*faceSize:		10
 xterm*scrollTtyOutput:	true
 xterm*cursorBlink: true
