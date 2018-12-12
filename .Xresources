@@ -3,67 +3,26 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!! Global !!!!!!!!!!!!!!!!!!!!!!!!!!!!
-! Import the color file
-#include ".colors"
-! blk
-*color0:  blk
-! gry
-*color8:  gry
-! red
-*color1:  red
-*color5:  red
-*color9:  red
-*color13: red
-! grn
-*color2:  grn
-*color3:  grn
-*color10: grn
-*color11: grn
-! blu
-*color4:  blu
-*color6:  blu
-*color12: blu
-*color14: blu
-! wht
-*color7:  wht
-*color15: wht
+#include ".cache/wal/colors.Xresources"
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!! General !!!!!!!!!!!!!!!!!!!!!!!!!!!!
-*background:	blk
-*foreground:	wht
-*gray:		gry
-*red:		red
-*green:		grn
-*blue:		blu
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!! XTerm !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-xterm*faceName:		DejaVu
-xterm*faceSize:		10
+*faceName: DejaVu
+*faceSize: 10
 xterm*scrollTtyOutput:	true
 xterm*cursorBlink: true
 
-xterm*foreground:	wht
-xterm*background:	blk
-xterm*cursorColor:	wht
-! blk
-xterm*color0:  blk
-! gry
-xterm*color8:  gry
-! red
-xterm*color1:  red
-xterm*color5:  red
-xterm*color9:  red
-xterm*color13: red
-! grn
-xterm*color2:  grn
-xterm*color3:  grn
-xterm*color10: grn
-xterm*color11: grn
-! blu
-xterm*color4:  blu
-xterm*color6:  blu
-xterm*color12: blu
-xterm*color14: blu
-! wht
-xterm*color7:  wht
-xterm*color15: wht
+! color0 black
+! color1 red
+! color2 green
+! color3 yellow
+! color4 dark blue
+! color5 magenta
+! color6 cyan
+! color7 gray
+! color8 gray
+! color9 red
+! color10 green
+! color11 yellow
+! color12 light blue
+! color13 magenta
+! color14 cyan
+! color15 white

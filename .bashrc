@@ -8,6 +8,9 @@ case $- in
       *) return;;
 esac
 
+# Import colorscheme from 'wal'
+(wal -r &)
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -133,3 +136,4 @@ PATH=$PATH:${HOME}/bin/art
 export EDITOR='vim'
 export PAGER='less'
 export TERM='xterm-256color'
+export READER='zathura'

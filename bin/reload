@@ -1,4 +1,7 @@
 #!/bin/bash
 
+# select random theme
+#art -r
+
 # automatically detect monitors
 ${HOME}/bin/autoxrandr

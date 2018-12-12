@@ -2,7 +2,7 @@
 #################### i3 config ####################
 ###################################################
 # This configuration is set up to work with "h",  #
-# "j", "k" and "l" as navigation keys. It's also  # 
+# "j", "k" and "l" as navigation keys. It's also  #
 # probably worth mentioning that I've remapped my #
 # capslock key to work as win key (Mod4).         #
 ###################################################
@@ -57,6 +57,9 @@ mode "resize" {
     bindsym	Shift+$right gaps outer current minus 5
     bindsym	Shift+$up gaps inner current plus 5
     bindsym	Shift+$down gaps inner current minus 5
+
+    bindsym g gaps outer all set 0; gaps inner all set 0
+    bindsym Shift+g gaps outer all set $outer_gaps; gaps inner all set $inner_gaps
 
     bindsym	Return	mode "default"
     bindsym	Escape	mode "default"
@@ -119,20 +122,22 @@ exec_always --no-startup-id	~/bin/reload
 
 ### Programs ###
 # launchers
-bindsym	$mod+space		exec --no-startup-id dmenu_run -b -p run -nb "$inactive-bg-color" -nf "$text-color" -sb "$urgent-bg-color" -sf "$urgent-text-color" -fn "$font:pixelsize=17"
-bindsym	$mod+d			exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -b -p launch -nb '$inactive-bg-color' -nf '$text-color' -sb '$urgent-bg-color' -sf '$urgent-text-color' -fn '$font:pixelsize=17'"
+bindsym	$mod+space		exec --no-startup-id dmenu_run -b -p run -nb "$inactive-bg-color" -nf "$text-color" -sb "$urgent-bg-color" -sf "$urgent-text-color" -fn "$font:pixelsize=14"
+bindsym	$mod+d			exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -b -p launch -nb '$inactive-bg-color' -nf '$text-color' -sb '$urgent-bg-color' -sf '$urgent-text-color' -fn '$font:pixelsize=16'"
 # quick start programs
-bindsym	$mod+Return		exec --no-startup-id xterm -e fish
+bindsym	$mod+Return		exec --no-startup-id xterm
 bindsym	$mod+v			exec --no-startup-id xterm -e vim
 bindsym	$mod+f			exec --no-startup-id i3-msg 'workspace $workspace5'; exec --no-startup-id xterm -e ranger
 bindsym $mod+u			exec --no-startup-id i3-msg 'workspace $workspace5'; exec --no-startup-id xterm -e 'ranger Documents/KIT/WS1819'
-bindsym	$mod+i			exec --no-startup-id i3-msg 'workspace $workspace2'; exec --no-startup-id firefox
+bindsym	$mod+i			exec --no-startup-id i3-msg 'workspace $workspace2'; exec --no-startup-id qutebrowser
 bindsym $mod+m			exec --no-startup-id i3-msg 'workspace $workspace6'; exec --no-startup-id xterm -e mutt
 bindsym $mod+a			exec --no-startup-id i3-msg 'workspace $workspace3'; exec --no-startup-id /opt/android-studio/bin/studio.sh
 bindsym $mod+n			exec --no-startup-id xterm -e newsboat
 bindsym $mod+w			exec --no-startup-id xterm -e 'curl wttr.in/Karlsruhe & sleep 10'
 bindsym $mod+Shift+t		exec --no-startup-id bin/themeselect
 # default workspaces
+assign	[class="qutebrowser"] $workspace2
+assign	[class="Spotify"] 	$workspace7
 assign	[class="Firefox"]	$workspace2
 assign	[class="Eclipse"]	$workspace3
 assign	[class="IntelliJ"]	$workspace3
@@ -155,26 +160,30 @@ font pango:		$font 10
 # no title bars or borders
 new_window		1pixel
 hide_edge_borders	smart
+default_border pixel 2
 
 ### gaps ###
-#smart_borders on
-gaps outer 30
-gaps inner 25
+set     $outer_gaps 10
+set     $inner_gaps 10
+smart_borders on
+# off by default:
+#gaps outer $outer_gaps
+#gaps inner $inner_gaps
 
 ### Colors ###
-# load			variable		id		fallback
-set_from_resource	$bg-color		color8		#000000
-set_from_resource	$inactive-bg-color	color0 		#000000
-set_from_resource	$text-color		color15		#E9ECE8
+# load		    	variable	         	id	    	fallback
+set_from_resource	$bg-color		        color8		#000000
+set_from_resource	$inactive-bg-color  	color0 		#000000
+set_from_resource	$text-color		        color15		#E9ECE8
 set_from_resource	$inactive-text-color	color7 		#444444
-set_from_resource	$urgent-bg-color	color0 		#E56F38
-set_from_resource	$urgent-text-color	color9 		#7B311E
+set_from_resource	$urgent-bg-color    	color0 		#E56F38
+set_from_resource	$urgent-text-color  	color9 		#7B311E
 # set
-#			border			background		text			indicator
-client.focused		$bg-color		$bg-color		$text-color		$bg-color
-client.unfocused	$inactive-bg-color	$inactive-bg-color	$inactive-text-color	$inactive-bg-color
-client.focused_inactive	$inactive-bg-color	$inactive-bg-color	$inactive-text-color	$inactive-bg-color
-client.urgent		$urgent-bg-color	$urgent-bg-color	$urgent-text-color	$urgent-bg-color
+#		            	border		        	background	       	text		        	indicator
+client.focused	    	$bg-color	        	$bg-color	       	$text-color	        	$bg-color
+client.unfocused    	$inactive-bg-color	    $inactive-bg-color 	$inactive-text-color	$inactive-bg-color
+client.focused_inactive	$inactive-bg-color	    $inactive-bg-color	$inactive-text-color	$inactive-bg-color
+client.urgent	    	$urgent-bg-color    	$urgent-bg-color   	$urgent-text-color	    $urgent-bg-color
 
 ### i3-bar ###
 bar {
@@ -185,8 +194,8 @@ bar {
 		background	#000000
 		separator	$bg-color
 		statusline	$text-color
-		# colors		border			background		text
-		focused_workspace	$bg-color		$bg-color		$text-color
+		# colors	    	border			    background  		text
+		focused_workspace	$bg-color		    $bg-color   		$text-color
 		inactive_workspace	$inactive-bg-color	$inactive-bg-color	$inactive-text-color
 		urgent_workspace	$urgent-bg-color	$urgent-bg-color	$urgent-text-color
 	}

@@ -44,7 +44,7 @@ xresources = read_xresources('*')
 ## Valid values:
 ##   - webengine: Use QtWebEngine (based on Chromium).
 ##   - webkit: Use QtWebKit (based on WebKit, similar to Safari).
-c.backend = 'webkit'
+# c.backend = 'webkit'
 
 ## This setting can be used to map keys to other keys. When the key used
 ## as dictionary-key is pressed, the binding for the key used as
@@ -84,23 +84,23 @@ c.colors.completion.fg = xresources['*foreground']
 
 ## Background color of the selected completion item.
 ## Type: QssColor
-c.colors.completion.item.selected.bg = xresources['*gray']
+c.colors.completion.item.selected.bg = xresources['*color6']
 
 ## Bottom border color of the selected completion item.
 ## Type: QssColor
-c.colors.completion.item.selected.border.bottom = xresources['*foreground']
+c.colors.completion.item.selected.border.bottom = xresources['*background']
 
 ## Top border color of the completion widget category headers.
 ## Type: QssColor
-c.colors.completion.item.selected.border.top = xresources['*foreground']
+c.colors.completion.item.selected.border.top = xresources['*background']
 
 ## Foreground color of the selected completion item.
 ## Type: QtColor
-c.colors.completion.item.selected.fg = xresources['*foreground']
+c.colors.completion.item.selected.fg = xresources['*background']
 
 ## Foreground color of the matched text in the completion.
 ## Type: QssColor
-# c.colors.completion.match.fg = xresources['*red']
+c.colors.completion.match.fg = xresources['*color5']
 
 ## Background color of the completion widget for odd rows.
 ## Type: QssColor
@@ -108,11 +108,11 @@ c.colors.completion.odd.bg = xresources['*background']
 
 ## Color of the scrollbar in the completion view.
 ## Type: QssColor
-c.colors.completion.scrollbar.bg = xresources['*foreground']
+c.colors.completion.scrollbar.bg = xresources['*background']
 
 ## Color of the scrollbar handle in the completion view.
 ## Type: QssColor
-# c.colors.completion.scrollbar.fg = 'white'
+c.colors.completion.scrollbar.fg = xresources['*foreground']
 
 ## Background color for the download bar.
 ## Type: QssColor
@@ -168,11 +168,11 @@ c.colors.hints.bg = xresources['*background']
 
 ## Font color for hints.
 ## Type: QssColor
-c.colors.hints.fg = xresources['*foreground']
+c.colors.hints.fg = xresources['*color6']
 
 ## Font color for the matched part of hints.
 ## Type: QssColor
-c.colors.hints.match.fg = xresources['*green']
+c.colors.hints.match.fg = xresources['*color5']
 
 ## Background color of the keyhint widget.
 ## Type: QssColor
@@ -224,7 +224,7 @@ c.colors.hints.match.fg = xresources['*green']
 
 ## Background color for prompts.
 ## Type: QssColor
-# c.colors.prompts.bg = '#444444'
+c.colors.prompts.bg = xresources['*background']
 
 ## Border used around UI elements in prompts.
 ## Type: String
@@ -232,11 +232,11 @@ c.colors.hints.match.fg = xresources['*green']
 
 ## Foreground color for prompts.
 ## Type: QssColor
-# c.colors.prompts.fg = 'white'
+c.colors.prompts.fg = xresources['*foreground']
 
 ## Background color for the selected item in filename prompts.
 ## Type: QssColor
-# c.colors.prompts.selected.bg = 'grey'
+c.colors.prompts.selected.bg = xresources['*color6']
 
 ## Background color of the statusbar in caret mode.
 ## Type: QssColor
@@ -280,11 +280,11 @@ c.colors.hints.match.fg = xresources['*green']
 
 ## Background color of the statusbar.
 ## Type: QssColor
-c.colors.statusbar.normal.bg = xresources['*background']
+# c.colors.statusbar.normal.bg = xresources['*background']
 
 ## Foreground color of the statusbar.
 ## Type: QssColor
-c.colors.statusbar.normal.fg = xresources['*foreground']
+# c.colors.statusbar.normal.fg = xresources['*foreground']
 
 ## Background color of the statusbar in passthrough mode.
 ## Type: QssColor
@@ -334,7 +334,7 @@ c.colors.statusbar.normal.fg = xresources['*foreground']
 
 ## Background color of the tab bar.
 ## Type: QtColor
-c.colors.tabs.bar.bg = xresources['*background']
+# c.colors.tabs.bar.bg = xresources['*background']
 
 ## Background color of unselected even tabs.
 ## Type: QtColor
@@ -342,7 +342,7 @@ c.colors.tabs.even.bg = xresources['*background']
 
 ## Foreground color of unselected even tabs.
 ## Type: QtColor
-c.colors.tabs.even.fg = xresources['*foreground']
+c.colors.tabs.even.fg = xresources['*color8']
 
 ## Color for the tab indicator on errors.
 ## Type: QtColor
@@ -371,23 +371,23 @@ c.colors.tabs.odd.bg = xresources['*background']
 
 ## Foreground color of unselected odd tabs.
 ## Type: QtColor
-c.colors.tabs.odd.fg = xresources['*foreground']
+c.colors.tabs.odd.fg = xresources['*color8']
 
 ## Background color of selected even tabs.
 ## Type: QtColor
-c.colors.tabs.selected.even.bg = xresources['*green']
+c.colors.tabs.selected.even.bg = xresources['*color1']
 
 ## Foreground color of selected even tabs.
 ## Type: QtColor
-c.colors.tabs.selected.even.fg = xresources['*foreground']
+c.colors.tabs.selected.even.fg = '#ffffff'
 
 ## Background color of selected odd tabs.
 ## Type: QtColor
-c.colors.tabs.selected.odd.bg = xresources['*green']
+c.colors.tabs.selected.odd.bg = xresources['*color1']
 
 ## Foreground color of selected odd tabs.
 ## Type: QtColor
-c.colors.tabs.selected.odd.fg = xresources['*foreground']
+c.colors.tabs.selected.odd.fg = '#ffffff'
 
 ## Background color for webpages if unset (or empty to use the theme's
 ## color).
@@ -652,7 +652,7 @@ c.colors.tabs.selected.odd.fg = xresources['*foreground']
 ## still be downloaded by clicking the download button in the pdf.js
 ## viewer.
 ## Type: Bool
-# c.content.pdfjs = False
+c.content.pdfjs = True
 
 ## Enable plugins in Web pages.
 ## Type: Bool
@@ -1365,7 +1365,7 @@ c.url.start_pages = ['https://start.duckduckgo.com']
 ## Format to use for the window title. The same placeholders like for
 ## `tabs.title.format` are defined.
 ## Type: FormatString
-# c.window.title_format = '{perc}{title}{title_sep}qutebrowser'
+c.window.title_format = '{perc}{title}'
 
 ## Default zoom level.
 ## Type: Perc

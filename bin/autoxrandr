@@ -10,6 +10,9 @@ WS3="3 dev"
 WS4="4 doc"
 WS5="5 file"
 
+# kill all polybars
+pkill polybar
+
 xrandr | grep $EXTERNAL_OUTPUT1 | grep " connected "
 if [ $? -eq 0 ]; then
 	# External displays connected
@@ -24,8 +27,9 @@ if [ $? -eq 0 ]; then
 	i3-msg "workspace $WS5; move workspace to output $EXTERNAL_OUTPUT2"
 
 	# start two polybars
-	MONITOR="DP1" polybar --reload bar1 &
-	MONITOR="DP2" polybar --reload bar2 &
+	# MONITOR="$INTERNAL_OUTPUT" polybar --reload bar1 &
+	MONITOR="$EXTERNAL_OUTPUT1" polybar --reload bar1 &
+	MONITOR="$EXTERNAL_OUTPUT2" polybar --reload bar2 &
 
 else
 	# No external displays connected
@@ -38,9 +42,9 @@ else
 	i3-msg "workspace $WS3; move workspace to output $INTERNAL_OUTPUT"
 	i3-msg "workspace $WS4; move workspace to output $INTERNAL_OUTPUT"
 	i3-msg "workspace $WS5; move workspace to output $INTERNAL_OUTPUT"
-	
+
 	# start one polybar
-	MONITOR="eDP1" polybar --reload bar1 &
+	MONITOR="$INTERNAL_OUTPUT" polybar --reload bar1 &
 fi
 
 # show polybar on every monitor
