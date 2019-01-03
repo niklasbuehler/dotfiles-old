@@ -2,7 +2,8 @@
 # script to be executed on i3wm startup
 
 # load theme
-art &
+# art &
+wal -R
 # reload xresources
 xrdb -merge ${HOME}/.Xresources
 # refresh colors

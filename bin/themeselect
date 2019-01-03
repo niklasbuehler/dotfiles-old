@@ -1,0 +1,7 @@
+#!/bin/bash
+# prompt to select theme
+wal --saturate 1.0 -i ~/Pictures/Wallpapers/"$(for i in $(ls ~/Pictures/Wallpapers); do echo ${i}; done | rofi -dmenu )"
+# reload xresources
+xrdb -merge ~/.Xresources
+# refresh colors
+i3-msg reload

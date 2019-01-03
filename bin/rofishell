@@ -1,0 +1,2 @@
+#!/bin/bash
+$(rofi -dmenu -lines 0 -p "shell")
