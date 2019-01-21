@@ -38,11 +38,11 @@ bindsym	$mod+Shift+Next		move workspace to output right
 ### Window containers ###
 # change container layout or use toggle split to change split orientation
 bindsym	$mod+t			layout tabbed
-bindsym	$mod+s			layout toggle split
+#bindsym	$mod+s			layout toggle split
 # enter fullscreen mode for the focused container
 bindsym	F11			fullscreen
 # toggle floating
-bindsym	$mod+Shift+f		floating toggle
+bindsym	$mod+Shift+f		floating toggle; resize set width 1000 px; resize set height 600 px; move position center
 bindsym $mod+Shift+s		sticky toggle
 floating_modifier $mod+Shift
 # enter resize mode
@@ -65,6 +65,8 @@ mode "resize" {
     bindsym	Return	mode "default"
     bindsym	Escape	mode "default"
 }
+bindsym $mod+g gaps outer all set 0; gaps inner all set 0
+bindsym $mod+Shift+g gaps outer all set $outer_gaps; gaps inner all set $inner_gaps
 
 ### Workspaces ###
 set	$workspace1	"1 tty"
@@ -134,10 +136,11 @@ bindsym	$mod+i			exec --no-startup-id i3-msg 'workspace $workspace2'; exec --no-
 bindsym $mod+m			exec --no-startup-id i3-msg 'workspace $workspace6'; exec --no-startup-id xterm -e mutt
 bindsym $mod+a			exec --no-startup-id i3-msg 'workspace $workspace3'; exec --no-startup-id /opt/android-studio/bin/studio.sh
 bindsym $mod+n			exec --no-startup-id xterm -e newsboat
-bindsym $mod+w			exec --no-startup-id xterm -e 'curl wttr.in/Karlsruhe & sleep 10'
+#bindsym $mod+w			exec --no-startup-id xterm -e 'curl wttr.in/Karlsruhe & sleep 10'
 bindsym $mod+Shift+t	exec --no-startup-id bin/themeselect
 bindsym $mod+e			exec --no-startup-id bin/rofishell
-bindsym $mod+g			exec --no-startup-id bin/rofisearch
+bindsym $mod+w			exec --no-startup-id qutebrowser "$(rofi -dmenu -lines 0 -p 'web')"; exec --no-startup-id i3-msg 'workspace $workspace2'
+bindsym $mod+s			exec --no-startup-id bin/focusview
 # default workspaces
 assign	[class="qutebrowser"] $workspace2
 assign	[class="Spotify"] 	$workspace7
@@ -148,8 +151,8 @@ assign	[class="Zathura"]	$workspace4
 # system control
 bindsym	XF86AudioRaiseVolume	exec --no-startup-id amixer -q set Master 10%+ unmute
 bindsym	XF86AudioLowerVolume	exec --no-startup-id amixer -q set Master 10%- unmute
-bindsym	XF86AudioMute		exec --no-startup-id amixer -q set Master toggle
-bindsym XF86MonBrightnessUp	exec --no-startup-id xbacklight + 10
+bindsym	XF86AudioMute			exec --no-startup-id amixer -D pulse set Master 1+ toggle
+bindsym XF86MonBrightnessUp		exec --no-startup-id xbacklight + 10
 bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight - 10
 
 ###################################################
@@ -169,9 +172,8 @@ default_border pixel 2
 set     $outer_gaps 10
 set     $inner_gaps 10
 smart_borders on
-# off by default:
-#gaps outer $outer_gaps
-#gaps inner $inner_gaps
+gaps outer $outer_gaps
+gaps inner $inner_gaps
 
 ### Colors ###
 # load		    	variable	         	id	    	fallback

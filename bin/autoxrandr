@@ -10,9 +10,6 @@ WS3="3 dev"
 WS4="4 doc"
 WS5="5 file"
 
-# kill all polybars
-pkill polybar
-
 xrandr | grep $EXTERNAL_OUTPUT1 | grep " connected "
 if [ $? -eq 0 ]; then
 	# External displays connected
@@ -25,12 +22,6 @@ if [ $? -eq 0 ]; then
 	i3-msg "workspace $WS3; move workspace to output $EXTERNAL_OUTPUT1"
 	i3-msg "workspace $WS4; move workspace to output $EXTERNAL_OUTPUT2"
 	i3-msg "workspace $WS5; move workspace to output $EXTERNAL_OUTPUT2"
-
-	# start two polybars
-	# MONITOR="$INTERNAL_OUTPUT" polybar --reload bar1 &
-	MONITOR="$EXTERNAL_OUTPUT1" polybar --reload bar1 &
-	MONITOR="$EXTERNAL_OUTPUT2" polybar --reload bar2 &
-
 else
 	# No external displays connected
 	xrandr --output $INTERNAL_OUTPUT --auto
@@ -42,20 +33,10 @@ else
 	i3-msg "workspace $WS3; move workspace to output $INTERNAL_OUTPUT"
 	i3-msg "workspace $WS4; move workspace to output $INTERNAL_OUTPUT"
 	i3-msg "workspace $WS5; move workspace to output $INTERNAL_OUTPUT"
-
-	# start one polybar
-	MONITOR="$INTERNAL_OUTPUT" polybar --reload bar1 &
 fi
-
-# show polybar on every monitor
-# pkill polybar
-# if type "xrandr"; then
-#   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-#     MONITOR=$m polybar --reload mybar &
-#   done
-# else
-#   polybar --reload mybar &
-# fi
 
 # change back from workspace 5 to workspace 1
 i3-msg "workspace $WS1"
+
+# reload polybars
+bin/start_polybar

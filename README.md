@@ -8,7 +8,7 @@ The main goal of this setup is to have uniform (vim-like) keybindings that fully
 ## Dependencies
 i3-gaps <br />
 polybar <br />
-art by @gawlk <br />
+pywal <br />
 compton <br />
 dunst <br />
 unclutter <br />
@@ -16,14 +16,19 @@ more... <br />
 
 ## Standard programs
 Terminal     	: xterm <br />
-Editor     	: vim <br />
-Pager		: less <br />
+Shell			: Zsh
+Editor   	  	: vim <br />
+Pager			: less <br />
 File Explorer 	: ranger <br />
-Web Browser  	: Firefox + Vim Vixen <br />
+Web Browser  	: qutebrowser <br />
 IDE:         	: IntelliJ + Vim Emulator <br />
 PDF Viewer    	: zathura <br />
 Image-Viewer  	: feh <br />
 
 ## Vim Plugin
-Hardmode <br />
+Snipmate <br />
 Goyo + Limelight <br />
+Hardmode <br />
+NERD Tree <br />
+SearchComplete <br />
+delimitMate <br <>>

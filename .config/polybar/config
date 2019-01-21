@@ -1,13 +1,13 @@
 [colors]
-background = ${xrdb:color0:#000000}
-background-alt = #444
-foreground = ${xrdb:*color8:#dfdfdf}
-foreground-alt = #555
+background = ${xrdb::#000000}
+background-alt = ${xrdb:color0:#444}
+foreground = ${xrdb:color15:#dfdfdf}
+foreground-alt = ${xrdb:color3:#555}
 primary = ${xrdb:color2:#ffb52a}
-secondary = #e60053
-alert = #bd2c40
-warning = #ffb52a
-success = #44cc44
+secondary = ${xrdb:color4:#e60053}
+alert = ${xrdb:color3:#bd2c40}
+warning = ${xrdb:color3:#ffb52a}
+success = ${xrdb:color2:#44cc44}
 
 [bar/bar1]
 monitor = ${env:MONITOR:eDP1}
@@ -323,7 +323,7 @@ format-prefix-foreground = ${colors.foreground-alt}
 label = %date% %time%
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 
 ;format-volume-prefix-foreground = ${colors.foreground-alt}
 format-volume = <ramp-volume> <label-volume> <bar-volume>

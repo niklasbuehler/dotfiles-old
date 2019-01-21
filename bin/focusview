@@ -1,0 +1,29 @@
+#!/bin/bash
+if pgrep -x "compton" >/dev/null
+then
+	# FOCUS ON
+	pkill -9 "redshift"
+	pkill -9 "compton"
+
+	# kill all polybars
+	killall -q polybar
+	while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+
+	notify-send "DUNST_COMMAND_PAUSE" &
+	unclutter -idle 0.25 &
+	redshift -x
+	i3-msg gaps outer all set 0
+	i3-msg gaps inner all set 0
+else
+	# FOCUS OFF
+	pkill -9 "unclutter"
+
+	compton --config ${HOME}/.config/compton/compton.conf &
+	notify-send "DUNST_COMMAND_RESUME" &
+	#redshift -c ${HOME}/.config/redshift.conf &
+	#polybar --reload bar1 &
+	#polybar --reload bar2 &
+	i3-msg gaps outer all set 10
+	i3-msg gaps inner all set 10
+	bin/start_polybar
+fi
