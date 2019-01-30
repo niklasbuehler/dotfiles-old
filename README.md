@@ -15,8 +15,8 @@ unclutter <br />
 more... <br />
 
 ## Standard programs
-Terminal     	: xterm <br />
-Shell			: Zsh
+Terminal     	: st <br />
+Shell			: zsh
 Editor   	  	: vim <br />
 Pager			: less <br />
 File Explorer 	: ranger <br />
@@ -25,7 +25,7 @@ IDE:         	: IntelliJ + Vim Emulator <br />
 PDF Viewer    	: zathura <br />
 Image-Viewer  	: feh <br />
 
-## Vim Plugin
+## Vim Plugins
 Snipmate <br />
 Goyo + Limelight <br />
 Hardmode <br />

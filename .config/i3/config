@@ -12,6 +12,10 @@
 #################### Behaviour ####################
 ###################################################
 
+# Default terminal
+set $term st
+
+
 ### Most important keys ###
 set	$mod	Mod4
 set	$left	h
@@ -128,15 +132,14 @@ exec_always --no-startup-id	~/bin/reload
 bindsym	$mod+space		exec --no-startup-id rofi -show run
 bindsym	$mod+d			exec --no-startup-id rofi -show drun
 # quick start programs
-bindsym	$mod+Return		exec --no-startup-id xterm
-bindsym	$mod+v			exec --no-startup-id xterm -e vim
-bindsym	$mod+f			exec --no-startup-id i3-msg 'workspace $workspace5'; exec --no-startup-id xterm -e ranger
-bindsym $mod+u			exec --no-startup-id i3-msg 'workspace $workspace5'; exec --no-startup-id xterm -e 'ranger Documents/KIT/WS1819'
+bindsym	$mod+Return		exec --no-startup-id $term
+bindsym	$mod+v			exec --no-startup-id $term vim
+bindsym	$mod+f			exec --no-startup-id i3-msg 'workspace $workspace5'; exec --no-startup-id $term ranger
+bindsym $mod+u			exec --no-startup-id i3-msg 'workspace $workspace5'; exec --no-startup-id $term ranger Uni
 bindsym	$mod+i			exec --no-startup-id i3-msg 'workspace $workspace2'; exec --no-startup-id qutebrowser
-bindsym $mod+m			exec --no-startup-id i3-msg 'workspace $workspace6'; exec --no-startup-id xterm -e mutt
+bindsym $mod+m			exec --no-startup-id i3-msg 'workspace $workspace6'; exec --no-startup-id $term mutt
 bindsym $mod+a			exec --no-startup-id i3-msg 'workspace $workspace3'; exec --no-startup-id /opt/android-studio/bin/studio.sh
-bindsym $mod+n			exec --no-startup-id xterm -e newsboat
-#bindsym $mod+w			exec --no-startup-id xterm -e 'curl wttr.in/Karlsruhe & sleep 10'
+bindsym $mod+n			exec --no-startup-id $term newsboat
 bindsym $mod+Shift+t	exec --no-startup-id bin/themeselect
 bindsym $mod+e			exec --no-startup-id bin/rofishell
 bindsym $mod+w			exec --no-startup-id qutebrowser "$(rofi -dmenu -lines 0 -p 'web')"; exec --no-startup-id i3-msg 'workspace $workspace2'

@@ -10,6 +10,12 @@
 xterm*scrollTtyOutput:	true
 xterm*cursorBlink: true
 
+URxvt.scrollBar: false
+URxvt.font: xft:DejaVu Sans Mono:pixelsize=14
+URxvt.urlLauncher: qutebrowser
+URxvt.perl-ext-common: default,tabbed,matcher,resize-font,-tabbed
+
+
 !xterm*background: #000000
 
 ! color0 black
