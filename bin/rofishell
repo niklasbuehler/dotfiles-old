@@ -1,2 +1,2 @@
 #!/bin/bash
-$(rofi -dmenu -lines 0 -p "shell")
+$(history | rofi -dmenu -i -l 0 -p "shell")

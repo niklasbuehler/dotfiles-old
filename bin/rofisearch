@@ -1,3 +1,0 @@
-#!/bin/bash
-qutebrowser "www.google.com/search?q=$(rofi -dmenu -lines 0 -p 'search')"
-xterm -e i3-msg "workspace 2 web"

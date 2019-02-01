@@ -1,0 +1,8 @@
+#!/bin/bash
+QUERY=$(cat ~/.config/qutebrowser/bookmarks/urls | cut -d' ' -f1 | rofi -dmenu -i -p web)
+if [ -z "$QUERY" ]
+then
+	exit
+fi
+i3-msg workspace "2 web"
+qutebrowser $QUERY

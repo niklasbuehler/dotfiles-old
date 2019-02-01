@@ -39,7 +39,7 @@
 
     # show age of message if message is older than show_age_threshold seconds.
     # set to -1 to disable
-    show_age_threshold = 60
+    show_age_threshold = -1
 
     # split notifications into multiple lines if they don't fit into geometry
     word_wrap = yes
@@ -132,30 +132,30 @@
     # xev might be helpful to find names for keys
 
     # close notification
-    close = mod1+m
+    close = ctrl+m
 
     # close all notifications
-    close_all = mod1+shift+m
+    close_all = ctrl+shift+m
 
     # redisplay last message(s)
-    history = mod1+n
+    history = ctrl+n
 
     # context menu
-    context = mod1+i
+    context = ctrl+i
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
-    background = "#000000"
+    background = "#000000" # or choose "#44cc44" for green
+    foreground = "#ffffff"
+    timeout = 5
+
+[urgency_normal]
+    background = "#ffb52a"
     foreground = "#ffffff"
     timeout = 10
 
-[urgency_normal]
-    background = "#000000"
-    foreground = "#ffffff"
-    timeout = 15
-
 [urgency_critical]
-    background = "#900000"
+    background = "#bd2c40"
     foreground = "#ffffff"
     timeout = 0

@@ -15,6 +15,9 @@ URxvt.font: xft:DejaVu Sans Mono:pixelsize=14
 URxvt.urlLauncher: qutebrowser
 URxvt.perl-ext-common: default,tabbed,matcher,resize-font,-tabbed
 
+rofi.lines: 5
+rofi.auto-select: true
+
 
 !xterm*background: #000000
 

@@ -5,3 +5,11 @@
 
 # automatically detect monitors
 ${HOME}/bin/autoxrandr
+
+# load theme
+# art &
+wal -R
+# reload xresources
+xrdb -merge ${HOME}/.Xresources
+# refresh colors
+i3-msg reload

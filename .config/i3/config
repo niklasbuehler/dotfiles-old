@@ -58,10 +58,10 @@ mode "resize" {
     bindsym	$down	resize grow height 20 px or 10 ppt
     bindsym	$right	resize grow width 20 px or 10 ppt
 
-    bindsym	Shift+$left gaps outer current plus 5
-    bindsym	Shift+$right gaps outer current minus 5
-    bindsym	Shift+$up gaps inner current plus 5
-    bindsym	Shift+$down gaps inner current minus 5
+    bindsym	Shift+$left gaps outer all plus 5
+    bindsym	Shift+$right gaps outer all minus 5
+    bindsym	Shift+$up gaps inner all plus 5
+    bindsym	Shift+$down gaps inner all minus 5
 
     bindsym g gaps outer all set 0; gaps inner all set 0
     bindsym Shift+g gaps outer all set $outer_gaps; gaps inner all set $inner_gaps
@@ -122,27 +122,28 @@ bindsym $mod+Shift+d		exec --no-startup-id setxkbmap de
 bindsym $mod+Shift+u		exec --no-startup-id setxkbmap us
 
 ### Scripts ###
-# on startup
-exec --no-startup-id		~/bin/startup
 # on restart
 exec_always --no-startup-id	~/bin/reload
+# on startup
+exec --no-startup-id		~/bin/startup
 
 ### Programs ###
 # launchers
 bindsym	$mod+space		exec --no-startup-id rofi -show run
 bindsym	$mod+d			exec --no-startup-id rofi -show drun
+bindsym $mod+Tab		exec --no-startup-id rofi -show window
 # quick start programs
 bindsym	$mod+Return		exec --no-startup-id $term
 bindsym	$mod+v			exec --no-startup-id $term vim
-bindsym	$mod+f			exec --no-startup-id i3-msg 'workspace $workspace5'; exec --no-startup-id $term ranger
+bindsym	$mod+f			exec --no-startup-id rofifiles
 bindsym $mod+u			exec --no-startup-id i3-msg 'workspace $workspace5'; exec --no-startup-id $term ranger Uni
 bindsym	$mod+i			exec --no-startup-id i3-msg 'workspace $workspace2'; exec --no-startup-id qutebrowser
 bindsym $mod+m			exec --no-startup-id i3-msg 'workspace $workspace6'; exec --no-startup-id $term mutt
 bindsym $mod+a			exec --no-startup-id i3-msg 'workspace $workspace3'; exec --no-startup-id /opt/android-studio/bin/studio.sh
 bindsym $mod+n			exec --no-startup-id $term newsboat
 bindsym $mod+Shift+t	exec --no-startup-id bin/themeselect
-bindsym $mod+e			exec --no-startup-id bin/rofishell
-bindsym $mod+w			exec --no-startup-id qutebrowser "$(rofi -dmenu -lines 0 -p 'web')"; exec --no-startup-id i3-msg 'workspace $workspace2'
+bindsym $mod+e			exec --no-startup-id rofishell
+bindsym $mod+w			exec --no-startup-id rofiweb
 bindsym $mod+s			exec --no-startup-id bin/focusview
 # default workspaces
 assign	[class="qutebrowser"] $workspace2
@@ -180,7 +181,7 @@ gaps inner $inner_gaps
 
 ### Colors ###
 # load		    	variable	         	id	    	fallback
-set_from_resource	$bg-color		        color8		#000000
+set_from_resource	$bg-color		        color1		#000000
 set_from_resource	$inactive-bg-color  	color0 		#000000
 set_from_resource	$text-color		        color15		#E9ECE8
 set_from_resource	$inactive-text-color	color7 		#444444
@@ -188,7 +189,7 @@ set_from_resource	$urgent-bg-color    	color0 		#E56F38
 set_from_resource	$urgent-text-color  	color9 		#7B311E
 # set
 #		            	border		        	background	       	text		        	indicator
-client.focused	    	$bg-color	        	$bg-color	       	$text-color	        	$bg-color
+client.focused	    	$bg-color	        	$urgent-text-color  $text-color	        	$bg-color
 client.unfocused    	$inactive-bg-color	    $inactive-bg-color 	$inactive-text-color	$inactive-bg-color
 client.focused_inactive	$inactive-bg-color	    $inactive-bg-color	$inactive-text-color	$inactive-bg-color
 client.urgent	    	$urgent-bg-color    	$urgent-bg-color   	$urgent-text-color	    $urgent-bg-color
