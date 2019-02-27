@@ -12,6 +12,7 @@ pywal <br />
 compton <br />
 dunst <br />
 unclutter <br />
+rofi <br />
 more... <br />
 
 ## Standard programs

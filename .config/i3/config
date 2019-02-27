@@ -47,8 +47,10 @@ bindsym	$mod+t			layout tabbed
 bindsym	F11			fullscreen
 # toggle floating
 bindsym	$mod+Shift+f		floating toggle; resize set width 1000 px; resize set height 600 px; move position center
-bindsym $mod+Shift+s		sticky toggle
 floating_modifier $mod+Shift
+for_window [title="Android Emulator"] floating enable
+
+bindsym $mod+Shift+s		sticky toggle
 # enter resize mode
 bindsym	$mod+r			mode "resize"
 # resize window (you can also use the mouse for that)
@@ -134,8 +136,9 @@ bindsym	$mod+d			exec --no-startup-id rofi -show drun
 bindsym $mod+Tab		exec --no-startup-id rofi -show window
 # quick start programs
 bindsym	$mod+Return		exec --no-startup-id $term
-bindsym	$mod+v			exec --no-startup-id $term vim
+bindsym	$mod+v			exec --no-startup-id rofivim
 bindsym	$mod+f			exec --no-startup-id rofifiles
+bindsym	$mod+p			exec --no-startup-id rofipdf
 bindsym $mod+u			exec --no-startup-id i3-msg 'workspace $workspace5'; exec --no-startup-id $term ranger Uni
 bindsym	$mod+i			exec --no-startup-id i3-msg 'workspace $workspace2'; exec --no-startup-id qutebrowser
 bindsym $mod+m			exec --no-startup-id i3-msg 'workspace $workspace6'; exec --no-startup-id $term mutt

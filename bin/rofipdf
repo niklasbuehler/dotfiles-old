@@ -1,0 +1,8 @@
+#!/bin/bash
+PDF=$(find . -name "*.pdf" -type f | rofi -dmenu -auto-select -i -p pdf)
+if [ -z "$PDF" ]
+then
+	exit
+fi
+i3-msg workspace "4 doc"
+zathura $PDF

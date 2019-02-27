@@ -1,6 +1,6 @@
 #!/bin/bash
 # Only show directories, exclude hidden ones like config, etc.
-FOLDER=$(find ./* -type d | rofi -dmenu -i -p folder)
+FOLDER=$(find ./* -type d | rofi -dmenu -auto-select -i -p folder)
 if [ -z "$FOLDER" ]
 then
 	exit

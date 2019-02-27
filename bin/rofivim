@@ -1,0 +1,7 @@
+#!/bin/bash
+RECENT=$(grep '^>' ~/.viminfo|cut -c3-|sed 's,~,'"$HOME"',' | rofi -dmenu -auto-select -i -p vim)
+if [ -z "$RECENT" ]
+then
+	exit
+fi
+st vim "$RECENT"

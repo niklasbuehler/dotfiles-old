@@ -395,9 +395,9 @@ format-full-prefix = " "
 format-full-prefix-foreground = ${colors.success}
 format-full-underline = ${colors.success}
 
-ramp-capacity-0 = ""
-ramp-capacity-1 = ""
-ramp-capacity-2 = ""
+ramp-capacity-0 = ""
+ramp-capacity-1 = ""
+ramp-capacity-2 = ""
 ramp-capacity-3 = ""
 ramp-capacity-4 = ""
 ramp-capacity-0-foreground = ${colors.alert}
