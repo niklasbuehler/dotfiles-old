@@ -41,8 +41,7 @@ bindsym	$mod+Shift+Next		move workspace to output right
 
 ### Window containers ###
 # change container layout or use toggle split to change split orientation
-bindsym	$mod+t			layout tabbed
-#bindsym	$mod+s			layout toggle split
+bindsym	$mod+t			layout toggle
 # enter fullscreen mode for the focused container
 bindsym	F11			fullscreen
 # toggle floating

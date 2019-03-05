@@ -108,4 +108,4 @@ compinit
 unsetopt beep
 bindkey -v
 # (cat ~/.cache/wal/sequences &)
-clear
+#clear

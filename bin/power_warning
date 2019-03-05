@@ -1,0 +1,6 @@
+#!/bin/bash
+BATTINFO=`acpi -b`
+PERC=$(cat /sys/class/power_supply/BAT0/capacity)
+if [[ `echo $BATTINFO | grep Discharging` && $PERC < 16 ]] ; then
+    DISPLAY=:0.0 /usr/bin/notify-send -u critical "Low battery!" "Only $PERC% remaining"
+fi
