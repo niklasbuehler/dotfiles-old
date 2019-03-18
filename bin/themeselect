@@ -5,3 +5,5 @@ wal --saturate 1.0 -i ~/Pictures/Wallpapers/"$(for i in $(ls ~/Pictures/Wallpape
 xrdb -merge ~/.Xresources
 # refresh colors
 i3-msg reload
+# regenerate zathura
+mkdir -pv $HOME/.config/zathura && genzathurarc > $HOME/.config/zathura/zathurarc
